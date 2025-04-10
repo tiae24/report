@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuoteController extends AbstractController
 {
 
-    #[Route("/api/")]
+    #[Route("/api/", name: "api")]
     public function api(): Response
     {
         $number = random_int(0, 100);
@@ -32,7 +32,7 @@ class QuoteController extends AbstractController
         return $response;
     }
 
-    #[Route("/api/quote")]
+    #[Route("/api/quote", name: "quote")]
     public function apiQuote(): Response
     {
         $number = random_int(0, 2);
@@ -59,7 +59,7 @@ class QuoteController extends AbstractController
     }
 
 
-    #[Route("/api/quotes")]
+    #[Route("/api/quotes", name: "quotes")]
     public function apiShowQuote(): Response
     {
         $number = random_int(0, 2);

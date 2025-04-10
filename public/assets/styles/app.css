@@ -94,3 +94,13 @@ h1 {
 }
 
 @import "navbar.css";
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow;
+    color: black;
+}

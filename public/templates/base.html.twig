@@ -14,17 +14,36 @@
         {% endblock %}
     </head>
     <body>
-        <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
-            <span class="site-title">My Symfony Site</span>
+        <header class="site-header"  style="background-image: url({{ asset('img/background.jpg') }}); height: 500px">
+            <span class="site-title">My Report Site</span>
         </header>
         <nav class="navbar">
             <ul>
                 <li><a href="{{ path('main') }}">Home</a></li>
                 <li><a href="{{ path('about') }}">About</a></li>
-                <li><a href="{{ path('lucky_number') }}">Lucky number</a></li>
+                <li><a href="{{ path('api') }}">Apis</a></li>
+                <li><a href="{{ path('report') }}">report</a></li>
+                <li><a href="{{ path('lucky_number') }}">Lucky</a></li>
             </ul>
         </nav>
 
         {% block body %}{% endblock %}
+
+        <div class="footer">
+            <div>
+                <p>
+                    Våran report sida för kursen MVC
+                </p>
+                <p>
+                    <a href="https://github.com/dbwebb-se/mvc">
+                    Våran report sida för kursen MVC
+                    </a>
+                </p>
+            </div>
+            <div class="social">
+            </div>
+        </div>
+
+
     </body>
 </html>
