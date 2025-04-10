@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+<h1>About</h1>
+<div class="two-col-layout">
+
+  <div class="column">
+    <p>Kursen MVC fokuserar på objektorienterade programmeringstekniker med programmingsspråket PHP
+    Syftet med Kursen är att lära oss och bemästra PHP, i olika kursmoment och ett sista projekt.</p>
+    <a href="{{ asset('img/PHP-logo.svg') }}">
+        <img src="{{ asset('img/PHP-logo.svg') }}" alt="" width="400px">
+    </a>
+  </div>
+  <div class="column">
+  <h1>Kursen Kursrepo</h1>
+       <a href="https://github.com/dbwebb-se/mvc">
+        <img src="{{ asset('img/gith.png') }}" alt="">
+    </a>
+  </div>
+</div>
+
+
+{% endblock %}

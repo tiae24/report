@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+    <p>Welcome to my awesome magical homepage.</p>
+    {% for quote in route %}
+
+        <a href="{{ quote.route }}">
+        <h3>{{ quote.route }}</h3>
+        </a>
+        <p>{{ quote.beskrivning }}</p>
+
+    {% endfor %}
+{% endblock %}

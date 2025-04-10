@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class="two-col-layouts">
+        <aside class="aside">
+            <h4>Innehållförteckning</h4>
+            <ul>
+                <li><a href="#kmom01">kmom01</a></li>
+                <li><a href="#kmom02">kmom02</a></li>
+                <li><a href="#kmom03">kmom03</a></li>
+                <li><a href="#kmom04">kmom04</a></li>
+                <li><a href="#kmom05">kmom05</a></li>
+                <li><a href="#kmom06">kmom06</a></li>
+                <li><a href="#kmom10">kmom10</a></li>
+            </ul>
+            <h4>Kursrepo</h4>
+            <p><a href="https://github.com/dbwebb-se/webtec">Kursrepo på github finns här</a></p>
+        </aside>
+
+
+        <main class="main">
+            <article class="article">
+                <h1>Redovisning</h1>
+
+                <h2 id="kmom01" class="reports">kmom01</h2>
+
+                <p>
+                    Kursmoment 1 var ju bara början av denna kurs så det var ju såklart mest att lära sig väldigt simpla saker och följa videon så bra som möjligt vilket gjorde det väldigt lätt att 
+                    förstå och att komma igång. Uppgifterna gjorde att man fick en väldigt bra "bas" att jobba med för att sedan bara ändra små saker som infom om migsjälv och sådant.
+                    Jag har jobbat en del med html och css i Visual Studio Code i gymnasiet där mitt Gymnasiearbetet var att göra en hemsidan så jag känner ändå igen mig inom dem delarna och kan ändå 
+                    grunderna inom dem men skulle vilja lära mig att bli lite mer "proffsig" i hur hela allt fungerar som t.ex sakerna är strukturerade och koden skriven. 
+                    Men när jag jobbade i Visual studio code och css så använde jag mig utav SASS och liveserver så det är ändå ganska annorlunda så det är lite ovanligt att ha webbplatserna 
+                    på localhost och student.bth.se  istället för att bara högerklika på html i vistaul studio och få upp sidan på chrome
+                    men desto mer man jobbar i allt det här desto lättare bli det tills att blir "automatiskt"
+                    Men jag har faktiskt aldrig jobbat med PHP så det ska bli spännande och lära mig, känner redan att det underlättar med att ha samma header på alla från header.php så det går 
+                    fortare att ändra allt.
+
+                </p>
+                <p>
+                    Jag har även aldrig jobbat med Ubuntu och XAMPP tidigare så det är en ny upplevelse, men det gick smidigt och ladda ner allt i Windows det var ju bara att följa videorna och lyssnar på zoom mötterna
+                    så gick allt bra, och ifall jag var lite osäker så kollade jag bara på discord och såg om någon annan hade haft samma problem och hur dem löste det.
+                    Jag kan ju såklart inte allt i Ubuntu så jag har lärt mig de väldigt simpla sakern som t.ex cd dbwebb-kurser, dbwebb publish och lite att felsöka när man publiserar och det är fel och även 
+                    hur börjat förståt hur Ubuntu kommer användas i kursen.
+                    Det som jag lärde mig idag skulle jag säga var allt inom php, som att "kopiera" headern in från header.php in till alla sidor när man delade upp header footern och main, 
+                    använda små saker som $today för att få fram datum och tider, som jag sa tidigare gjorde det allt väldigt mycket snabbare och effektivare eftersom jag hade ju headern 
+                    och footern färdiga och om du vill ändra något i dem så ändras de på alla sidorna.
+                </p>
+
+                <h2 id="kmom02" class="reports">kmom02</h2>
+            </article>
+        </main>
+    </div>
+
+{% endblock %}
