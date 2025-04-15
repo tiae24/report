@@ -7,7 +7,7 @@
     <p>Welcome to my awesome magical homepage.</p>
     {% for quote in route %}
 
-        <a href="{{ quote.route }}">
+        <a href="{{ path('quote') }}">
         <h3>{{ quote.route }}</h3>
         </a>
         <p>{{ quote.beskrivning }}</p>
