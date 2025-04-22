@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+    <div class="main-body">
+
+        <p>Här finns våran kortlek</p>
+
+        <h2>{{ suit[1] }}</h2>
+
+        <div class="card">
+        {% for i in 0..(cards|length - 1) %}
+            <span class="card-symbol {{ suit[i] }}">{{ cards[i] }}</span>
+        {% endfor %}
+        </div>
+
+    </div>
+    
+{% endblock %}

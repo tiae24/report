@@ -9,7 +9,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuoteController extends AbstractController
 {
-
     #[Route("/api/", name: "api")]
     public function api(): Response
     {
@@ -19,7 +18,32 @@ class QuoteController extends AbstractController
             [
                 'route' => '/api/quote',
                 'metod' => 'GET',
-                'beskrivning' => 'Slumpar fram en quote och när det hände'
+                'beskrivning' => 'Slumpar fram en quote och när det hände',
+                'name' => 'quote'
+            ],
+            [
+                'route' => '/api/deck',
+                'metod' => 'GET',
+                'beskrivning' => 'Visar en kortlek',
+                'name' => 'api_deck'
+            ],
+            [
+                'route' => '/api/deck/shuffle',
+                'metod' => 'POST',
+                'beskrivning' => 'Blandar kortleken',
+                'name' => 'api_shuffle'
+            ],
+            [
+                'route' => '/api/deck/draw',
+                'metod' => 'POST',
+                'beskrivning' => 'Drar ett kort från kortleken',
+                'name' => 'api_draw'
+            ],
+            [
+                'route' => '/api/deck/draw/:number',
+                'metod' => 'POST',
+                'beskrivning' => 'Drar 5 kort från kortlecken',
+                'name' => 'api_draw_cards'
             ]
             ];
 

@@ -1,0 +1,78 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+    <div class="main-body">
+
+    {% for routes in route %}
+
+        <h3 class="route">{{ routes.route }}</h3>
+
+        <h3>{{ routes.name }}</h3>
+
+        <p>{{ routes.beskrivning }}</p>
+
+        {% if routes.name == 'drawNumber' %}
+
+            <button onclick="window.location.href='{{ path(routes.name, { number: 5 }) }}';">
+            Go!
+            </button>
+        
+
+        {% else %}
+
+            <button onclick="window.location.href='{{ path(routes.name) }}';">
+                Go!
+            </button>
+
+        {% endif %}
+
+    {% endfor %}
+
+
+    <h2> UML DIAGRAM OCH KLASSER </h2>
+
+    <p>
+        Jag har gjort och använt 3 klasser, Cards, CardGraphic och DeckOfCards, Cards är självaste korten vi använder som har ett value och en suit,
+        har två funktioner som låter oss få fram ett korts värde och dens suit.
+    </p>
+
+    <p>
+        CardGraphic är våran klass där vi gör självaste kortet vi ser på hemsidan, vi vår in ett kort och så kollar vi på dens värde och suit och ger den 
+        det kortet som passar beroende på vad kortet är, så hjärter ess blir kortet som ser ut som hjärter ess. Sen har jag getAssString så får vi kortet som string,
+        så vi kan använda det på våran sida
+    </p>
+
+    <p>
+        Sen har vi DeckOfCards som är våran klass som ärver från båda Cards och DeckOfCards, våran DeckOfCards består av en array som har Cards och CardsGraphic, vi bygger
+        dem genom att loopa igenom en Lista med suitsen och med korten, och så lägger vi till dem i en array under card och cardgraphic.
+
+    </p>
+
+    <p>
+        Sedan har vi massa funktioner som vi använder, som totalCards som kollar vad hur många kort det är i decket, getCards som ger oss korten från
+        cardgraphic i string form, så vi får vårat kort som vi använder på sidan som t.ex 🂱.
+    </p>
+
+    <p>
+        getSuit som ger oss suiten på vårat kort
+    </p>
+
+    <p>
+        getString som ger oss kortet från card i string form, så vi får typ [2, hearts]
+    </p>
+
+    <p>
+        drawCards som drar ett antal kort från vårat deck och tar bort dem 
+        och skickar en array på dem borttagna korten, så antalet kort man ska ta bort används med en for loop som tar fram random nummer mellan 0 till 
+        totala antalet kort i decket sen lägger vi till korten, suiten och cardgraphic i en array som vi sedan vissar upp på sidan, och sen sist i loopen tar vi bort 
+        kortet från decket och sen loopas det om.
+    </p>
+
+    <img src="img/MVC.PNG" alt="Our UML DIAGRAM" width="800" height="600">
+
+    </div>
+    
+{% endblock %}

@@ -1,13 +1,12 @@
 body {
     margin: 0 auto;
-    background-color: yellow;
+    background-color: #fcf1c0;
     max-width: 100%;
 }
 
 h1 {
     border-bottom: 4px double #ccc;
 }
-
 
 
 .two-col-layouts {
@@ -95,12 +94,67 @@ h1 {
 
 @import "navbar.css";
 
+@import "warning.css";
+
 .footer {
     display: flex;
     flex-direction: row;
     padding: 2rem;
     justify-content: space-between;
     align-items: center;
-    background-color: yellow;
+    background-color: #f9dc5c;
     color: black;
+}
+
+.card {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.card span {
+    background-color: white;
+}
+
+.hearts {
+    color: red;
+}
+
+.diamonds {
+    color: red;
+}
+
+.main-body{
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: #fdf8e1;
+    font-size: 2em;
+    padding: 1rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+input {
+    font-size: 1em;
+}
+
+h1 {
+    border-bottom: 4px double green;
+}
+
+
+.main-body .route {
+    border-top: 2px solid #000;
+}
+
+button {
+    background-color: #fdf8e1;
+    color: #000;
+    cursor: pointer;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: #fcf1c0;
 }

@@ -4,13 +4,32 @@
 
 {% block body %}
 
-    <p>Welcome to my awesome magical homepage.</p>
-    {% for quote in route %}
+    <div class="main-body">
 
-        <a href="{{ path('quote') }}">
-        <h3>{{ quote.route }}</h3>
-        </a>
-        <p>{{ quote.beskrivning }}</p>
+    <p>Welcome to my awesome magical homepage.</p>
+    {% for routes in route %}
+
+        <h3>{{ routes.route }}</h3>
+
+        <h3>{{ routes.name }}</h3>
+
+        <p>{{ routes.beskrivning }}</p>
+
+        {% if routes.name == 'api_draw_cards' %}
+
+        <form action="{{ path(routes.name, { number: 5 }) }}" method="{{routes.metod}}">
+            <button>Go!</button>
+        </form>
+
+        {% else %}
+
+        <form action="{{ path(routes.name) }}" method="{{routes.metod}}">
+            <button>Go!</button>
+        </form>
+
+        {% endif %}
 
     {% endfor %}
+
+    </div>
 {% endblock %}
