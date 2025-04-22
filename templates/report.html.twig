@@ -52,6 +52,47 @@ Min TIL för detta momentet var, att jobba i en klass och använda mig utav rout
                 </p>
 
                 <h2 id="kmom02" class="reports">kmom02</h2>
+                <p>
+                    Arv är ju när en en klass ärver från en annan klass, man kan ju säga att den nya klassen som ärver från den andra är en utökning av basklassen.
+                </p>
+                <p>
+                    Komposition är när en klass har en annan klass i sig och använder den, i vårt fall har ju DeckOfCards 2 klasser som den använder (Cards, CardGraphic).
+                </p>
+                <p>
+                    Interface är som ett kontrakt där en klass lovar att erbjuda vissa metoder, interface innehåller ingen kod som klasserna kan återanvända utan är bara ett löfte att interfaces metoder ska finnas inuti klassen.
+Så vi kan göra en interface, och sedan implementera den i våran klass för att använda den.
+
+                </p>
+                <p>
+                    
+Trait är väldigt likt arv men är gjort annorlunda, en trait är typ som en funktion man har i klassen som är gjort utifrån, så vi kan göra en trait som kanske skriva ut “hej”, och sedan använda vi traiten i klassen och då får våran klass tillgång till det.
+
+                </p>
+                <p>
+                    Så jag hade kommit lite efter så är helt okej nöjd med uppgiften, allt funkar som det ska men skulle fixa hur allt ser ut på sidan lite bättre, och kanske fixa shuffle, just nu så shufflar jag en kopia av decket, men skulle vilja fixa så jag shufflar självaste decket.
+                </p>
+                <p>
+                    Det gick ändå ganska bra att fixa allt, hade ju dice uppgiften som något man kunde kolla på av hur man gjorde klasserna och hur funktionerna funkade, visste redan att det var DeckOfCards som skulle ärva från dem andra klasserna. 
+                </p>
+                <p>
+                    Jag hade ju redan en sida (session) där jag kollade i JSON om allt funkade, så när jag väll skulle fixa api sidorna så gick det väldigt fort, då kunde jag bara göra routes dit och sen kopiera in koden jag hade där.
+                </p>
+
+                <p>
+                    Jag började med att jobba på klasserna, så jag gjorde klart cards först sen DeckOfCards och testa om det funkade i sidan session, jag gjorde bara grunderna då så jag kunde få en kortlek, sen gjorde jag sakerna i ordningen som stod på uppgiften, shuffle var ju ganska lätt och fixa, eftersom det var bara att använda sig av shuffle(deck), så det gick väldigt fort medans draw tog mycket längre tid för jag fick alltid felet att jag skicka in en array i $data men det behövde vara en string, men sen gjorde jag så man skrev in ett nummer och så loopade man igenom decket så många gånger och tog fram ett random nummer från 0 till antalet kort, och sedan la jag till det i en array och tog bort kortet från decket, och så loopade det om.
+                </p>
+
+                <p>
+                    
+Det har vart helt okej att jobba i Symfony, det är ganska lätt att se när man får ett fel vad som kan vara felet och vart det ligger, det är väldigt likt det vi gjorde i databas kursen med routes och sånt men detta känns lite mer strukturerat och det är lite enklare att hitta vart allting ligger och hur man delar upp allting.
+Det är också hyfsat lätt att jobba array och sånt och få dem att funka i twig, så det var inte så mycket problem att få decksen att funka och t.ex loopa igenom dem.
+
+                </p>
+
+                <p>               
+Tror inte jag hade jobbat med klasser i php förut så visste inte riktigt att man kunde göra det, så det var typ det jag lärde mig, och hur dem funkar, skönt ändå att jag har gått oopython kursen innan också så det går ändå fort att lära sig eftersom sakerna man gör som t.ex routes eller klasserna är super likt det man gör i andra kurserna.
+
+                </p>
             </article>
         </main>
     </div>

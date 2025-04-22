@@ -158,3 +158,8 @@ button {
 button:hover {
     background-color: #fcf1c0;
 }
+
+.site-header {
+    height: 700px;
+    background-size: 100% 100%;
+}
