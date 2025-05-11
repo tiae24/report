@@ -1,0 +1,90 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+    <div class="main-body">
+
+        <h2>FlödesSchema</h2>
+
+        <img src="{{ asset('img/flödesschema.PNG') }}" alt="flödesschema">
+
+
+        <h2>Psuedokod </h2>
+
+        <h5>Starta Spelet</h5>
+
+        <h5>Kalla på blackjack och få en kortlek</h5>
+
+        <h5>Kolla om spelet är slut (Någon har dragit över 21, eller spelaren har klickat på stanna och dealern har dragit över 17)</h5>
+
+        <h5>Ha två knappar [Dra Kort] och [Stanna]</h5>
+
+        <div class="blank"></div>
+
+        <h5>Om spelaren klickade på [Dra Kort]</h5>
+            <h5 class="indent" >Dra kort från kortleken och lägg till i den hand (lägg till värdet också)</h5>
+            <h5 class="indent" >Kalla på funktion gameOver()</h5>
+
+        <div class="blank"></div>
+
+        <h5>Om spelaren klickar på [Stanna]</h5>
+            <h5 class="indent" >Dealern drar kort och lägger till i sin egen hand tills deras totala värde är över 17</h5>
+            <h5 class="indent" >Kalla på funktion gameOver()</h5>
+
+        <div class="blank"></div>
+
+        <h5>Funktion gameOver:</h5>
+            <h5 class="indent" >Om (spelarens hand > 21)</h5>
+                <h5 class="indent2" >return Dealern vann</h5>
+            <h5 class="indent" >Annars om (dealerns hand > 21)</h5>
+                <h5 class="indent2" >return Spelaren vann</h5>
+
+            <h5 class="indent" >Om (dealerns hand >= 17)</h5>
+                <h5 class="indent2" >Om (spelarens hand > dealerns hand)</h5>
+                    <h5 class="indent3" >return Spelaren vann</h5>
+                <h5 class="indent2" >Annars om (dealerns hand > spelarens hand)</h5>
+                    <h5 class="indent3" >return Dealern vann</h5>
+                <h5 class="indent2" >Annars om (dealerns hand == spelarens hand)</h5>
+                    <h5 class="indent3" >return Dealern vann</h5>
+            
+            <h5 class="indent" >Return inget</h5>
+
+        
+        <div class="blank"></div>
+
+
+        <h5>Om (gameOver() == 'inget')</h5>
+
+            <h5 class="indent" >Visa knappar</h5>
+
+        <h5>Annars</h5>
+
+            <h5 class="indent" >Visa gameOver() värdet</h5>
+            <h5 class="indent" >Visa länk för att starta om spelet</h5>
+
+
+        <div class="blank"></div>
+
+
+        <h2>Klass</h2>
+
+        <p>
+            Jag behöver skapa klassen Blackjack som använder sig av våra tidigare klasser och gör allt från att skapa ett däck som vi kan dra kort ifrån 
+            och skapa 2 händer för spelaren och dealern.
+
+        </p>
+
+        <p>
+            Klassen styr hela spelet och räknar ut “poängen” på händerna och ifall spelet ska sluta och vem som vann.
+
+        </p>
+
+
+
+    </div>
+    
+    
+{% endblock %}

@@ -163,3 +163,32 @@ button:hover {
     height: 700px;
     background-size: 100% 100%;
 }
+
+
+h5 {
+    margin: 25px;
+}
+
+.indent {
+    text-indent: 30px; /* Ändra detta värde efter önskat indrag */
+}
+
+.indent2 {
+    text-indent: 60px; /* Ändra detta värde efter önskat indrag */
+    font-style: italic;
+}
+
+.indent3 {
+    text-indent: 90px; /* Ändra detta värde efter önskat indrag */
+    font-size: 0.63em;
+    font-style: italic;
+}
+
+.blank {
+    height: 25px;
+}
+
+.explain {
+    font-size: 0.53em;
+}
+

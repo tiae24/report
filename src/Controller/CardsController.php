@@ -18,18 +18,23 @@ class CardsController extends AbstractController
     public function sessionStart(
         SessionInterface $session
     ): Response {
+        /** @var DeckOfCards $deck */
         $deck = new DeckOfCards();
 
         $session->set('deck', $deck);
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
+
+        $drawn = $deck -> drawCard(1);
 
         $data = [
             'decks' => $deck -> getCards(),
             'card' => $deck -> getString(),
             'graphic' => $deck -> getCard(),
             'suit' => $deck -> getSuit(),
-            'total' => $deck -> totalCards()
+            'total' => $deck -> totalCards(),
+            'nyrandom' => $drawn,
         ];
 
         $response = new JsonResponse($data);
@@ -109,8 +114,9 @@ class CardsController extends AbstractController
     public function deck(
         SessionInterface $session
     ): Response {
-        $number = new Cards(2, "Heart");
+        $number = new Cards("2", "Heart");
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
         $data = [
@@ -126,6 +132,7 @@ class CardsController extends AbstractController
         SessionInterface $session
     ): Response {
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
         $shuffled = clone $deck;
@@ -146,6 +153,7 @@ class CardsController extends AbstractController
         SessionInterface $session
     ): Response {
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
         $drawn = $deck -> drawCard(1);
@@ -164,9 +172,10 @@ class CardsController extends AbstractController
         SessionInterface $session
     ): Response {
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
-        $drawn = $deck -> drawCard($number);
+        $drawn = $deck -> drawCard((int) $number);
 
 
         $data = [

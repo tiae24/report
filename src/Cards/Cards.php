@@ -4,7 +4,10 @@ namespace App\Cards;
 
 class Cards
 {
+    /** @var string */
     protected $value;
+
+    /** @var string */
     protected $suit;
 
     public function __construct(string $value, string $suit)

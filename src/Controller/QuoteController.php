@@ -44,6 +44,12 @@ class QuoteController extends AbstractController
                 'metod' => 'POST',
                 'beskrivning' => 'Drar 5 kort från kortlecken',
                 'name' => 'api_draw_cards'
+            ],
+            [
+                'route' => '/api/game',
+                'metod' => 'GET',
+                'beskrivning' => 'Kolla på hur kortspelets omgång ser ut',
+                'name' => 'api_game'
             ]
             ];
 

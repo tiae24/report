@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Cards\Cards;
 use App\Cards\DeckOfCards;
 use App\Cards\CardGraphic;
+use App\Cards\BlackJack;
 
 class ApiController extends AbstractController
 {
     #[Route("/api/deck", name: "api_deck", methods: ['GET'])]
     public function apiDeck(): Response
     {
+        /** @var DeckOfCards $deck */
         $deck = new DeckOfCards();
 
         $data = [
@@ -35,10 +37,12 @@ class ApiController extends AbstractController
     public function apiShuffle(
         SessionInterface $session
     ): Response {
+        /** @var DeckOfCards $deck */
         $deck = new DeckOfCards();
 
         $session->set('deck', $deck);
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
         $deck -> shuffle();
@@ -59,6 +63,7 @@ class ApiController extends AbstractController
     public function apiDrawCard(
         SessionInterface $session
     ): Response {
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
         $drawn = $deck -> drawCard(1);
@@ -81,9 +86,10 @@ class ApiController extends AbstractController
         SessionInterface $session
     ): Response {
 
+        /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
 
-        $drawn = $deck -> drawCard($number);
+        $drawn = $deck -> drawCard((int) $number);
 
 
         $data = [
@@ -93,6 +99,29 @@ class ApiController extends AbstractController
         $data = [
             'cards' => $drawn,
             'total' => $deck -> totalCards()
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/game", name: "api_game", methods: ['GET'])]
+    public function apiGame(SessionInterface $session): Response
+    {
+        /** @var BlackJack $deck */
+        $deck = $session->get("game");
+
+        $game = $deck -> gameOver();
+
+        $data = [
+            'playerHand' => $deck -> playerHand(),
+            'dealerHand' => $deck -> dealerHand(),
+            'playerScore' => $deck -> getScore($deck -> playerHand()),
+            'dealerScore' => $deck -> getScore($deck -> dealerHand()),
+            'game' => $game
         ];
 
         $response = new JsonResponse($data);

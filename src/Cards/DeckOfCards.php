@@ -7,6 +7,7 @@ use App\Cards\CardGraphic;
 
 class DeckOfCards
 {
+
     protected $cards = [];
 
     public function __construct()
@@ -27,11 +28,17 @@ class DeckOfCards
 
     }
 
+    /**
+     * @return array<int, array{ card: string, graphic: string }>
+     */
     public function getCards(): array
     {
         return $this->cards;
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function getString(): array
     {
         $values = [];
@@ -41,6 +48,9 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function getCard(): array
     {
         $values = [];
@@ -50,6 +60,9 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function getSuit(): array
     {
         $values = [];
@@ -64,6 +77,12 @@ class DeckOfCards
         return count($this->cards);
     }
 
+
+
+    /**
+     * @param int $amount
+     * @return array<int, array{ suit: string, card: string, graphic: string }>
+     */
     public function drawCard(int $amount): array
     {
         $max = $this->totalCards();
@@ -85,12 +104,18 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+     * @return array<int, array{ suit: string, card: string, graphic: string }>
+     */
     public function shuffle(): array
     {
         shuffle($this->cards);
         return $this->cards;
     }
 
+    /**
+     * @return array<int, array{ suit: string, card: string, graphic: string }>
+     */
     public function sort(): array
     {
         sort($this->cards);

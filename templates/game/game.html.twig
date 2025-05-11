@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+    <div class="main-body">
+        <h2>Players Cards</h2>
+        <h2>{{playerScore}}</h2>
+        <div class="card">
+        {% for i in 0..(playerHand|length - 1) %}
+        {% if playerHand %}
+            <span class="card-symbol {{ playerHand[i]['suit'] }}">{{ playerHand[i]['graphic'] }}</span>
+        {% endif %}
+        {% endfor %}
+        </div>
+
+        <h2>Dealers Cards</h2>
+
+        <h2>{{dealerScore}}</h2>
+        <div class="card">
+        {% for i in 0..(dealerHand|length - 1) %}
+        {% if dealerHand %}
+            <span class="card-symbol {{ dealerHand[i]['suit'] }}">{{ dealerHand[i]['graphic'] }}</span>
+        {% endif %}
+        {% endfor %}
+        </div>
+
+
+    {% if game == 'Dealer won' or game == 'Player won' %}
+        <h2>{{game}}</h2>
+        <a href="{{ path('startGame') }}">Reset Game</a>
+    {% else %}
+        <form method="POST">
+            <button type="submit" name="action" value="draw">Dra kort</button>
+            <button type="submit" name="action" value="stand">Stanna</button>
+        </form>
+
+    {% endif %}
+    </div>
+    
+    
+{% endblock %}

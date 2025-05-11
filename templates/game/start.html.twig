@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+    <div class="main-body">
+
+        <h2>Kortspelet 21</h>
+
+        <p class="explain">Målet med spelet är att komma så nära 21 som möjligt med korten du drar, varje kort har ett värde och om du får över 21 så förlorar du!</p>
+
+        <h4>Ess är 1 eller 14 beroende på om du kommer få över 21 eller inte</h4>
+
+        <h4>Kung är 13</h4>
+
+        <h4>Drottning är 12</h4>
+
+        <h4>Knäckt är 11</h4>
+
+        <a href="{{ path('playGame') }}">Play Game</a>
+
+
+
+        <h2>Annan Info</h2>
+
+        {% for routes in route %}
+
+        <h3 class="route">{{ routes.route }}</h3>
+
+        <h3>{{ routes.name }}</h3>
+
+        <p>{{ routes.beskrivning }}</p>
+
+        {% if routes.name == 'drawNumber' %}
+
+            <button onclick="window.location.href='{{ path(routes.name, { number: 5 }) }}';">
+            Go!
+            </button>
+        
+
+        {% else %}
+
+            <button onclick="window.location.href='{{ path(routes.name) }}';">
+                Go!
+            </button>
+
+        {% endif %}
+
+    {% endfor %}
+
+    </div>
+    
+    
+{% endblock %}
