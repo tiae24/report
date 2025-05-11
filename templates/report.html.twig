@@ -93,6 +93,42 @@ Det är också hyfsat lätt att jobba array och sånt och få dem att funka i tw
 Tror inte jag hade jobbat med klasser i php förut så visste inte riktigt att man kunde göra det, så det var typ det jag lärde mig, och hur dem funkar, skönt ändå att jag har gått oopython kursen innan också så det går ändå fort att lära sig eftersom sakerna man gör som t.ex routes eller klasserna är super likt det man gör i andra kurserna.
 
                 </p>
+
+                <h2 id="kmom03" class="reports">kmom3</h2>
+
+                <p>
+                    Det var lite jobbigt att hålla på med pseudokod och flödesdiagram i början för det känns som jag verkligen behöver sätta mig ner och pausa innan jag börjar för att nästan tänka igenom allting jag ska göra, i alla fall en mall av uppgiften.
+
+                </p>
+
+                <p>
+                    Vilket är lite jobbigt på ett sätt för jag vill gärna börja koda direkt men jag skulle ändå säga att det hjälper mig för då får jag en bild av vad jag ska göra och kanske hur jag ska göra det, då har jag ju som jag nämnde en skiss jag kan gå tillbaka och kolla på ifall jag fastnar på någonting och se hur jag ska tänka eller hur jag kanske tänkte jag skulle lösa det när jag började på uppgiften.
+                </p>
+
+                <p>
+                    Jag är helt okej nöjd med uppgiften, självaste kodningen kändes ändå hyfsat lätt jag skulle ju såklart kanske kunna fixa en CardHand klass som jag sparar händerna i för spelaren och dealern men jag kände ändå att det inte behövdes, får se om jag ändrar mig längre fram.
+                </p>
+
+                <p>
+                    Det första jag gjorde när jag skapade var självaste drawCard delen för Blackjack och spara korten i händerna, och det var ju ändå super simpelt det var att dra ett kort från kortleken och sen spara ner i en array.
+                </p>
+
+                <p>
+                    Jag gjorde också så att drawcard hade en parameter där man skrev in vem det var som skulle lägga till ett kort i handen, så ifall det var spelaren så skickade jag in “player” när man klickade på knappen, och när man klickade på stanna så var det ju dealerns tur, och eftersom vi inte har någon fysiskt dealer så körde jag bara en loop som körde till man fick en viss “poäng” för dealer handen, så sen gjorde jag getScore som tog en hand man skickade in och loopade igenom korten i den och kollade vad handen var värd, och så körde jag insatser för att ge kung, drottning, knäckt och ess deras värden, och jag gjorde så att ifall man drog ett ess så kollade man först hur många poäng man hade, så ifall vi hade t.ex 10 poäng och drog ett ess så var esset bara värt ess eftersom annars hade vi ju förlorat.
+                </p>
+
+                <p>
+                    Våran gameover var väldigt simpel, där vi bara checkade poängen, och varje gång vi var i game/play så checkade vi ifall spelet var över för att vara redo att uppdatera hur sidan såg ut och ta bort knapparna.
+                </p>
+
+                <p>
+                    Jag tycker det har varit riktigt skönt och ändå lätt att använda symfony, det går fort att felsöka, det går fort att uppdatera om man har gjort något fel eller vill t.ex ändra något i css och det är lätt att hålla reda på vart allting ligger och vad allting gör, eftersom vi har våra controller, våra klasser osv så det har faktiskt varit ganska kul och lätt att komma igång i även fast jag hamnade lite efter.
+                </p>
+
+                <p>
+                    Lint delen var det största jag lärde mig, hade ju inte fixat några kommentarer och förklaringar av vad funktionerna gjorde så behövda kolla på https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type och läsa massa där för att ta reda på hur jag skulle fixa fel meddelandena jag fick.
+                </p>
+
             </article>
         </main>
     </div>
