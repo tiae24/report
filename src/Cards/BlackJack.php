@@ -24,6 +24,8 @@ class BlackJack
     }
 
     /**
+     * Here is where we get score for the players and dealers hand
+     * With an ace and the face cards we give them a numerical value instead.
      * @param array<int, array{ card: string, graphic: string }> $hand
      * @return int
      */
@@ -54,6 +56,9 @@ class BlackJack
     }
 
     /**
+     * Here is where we draw a card to add to the hand of either the player or dealer.
+     * our parameter is where we write if we are the player or dealer so we know where to add the cards
+     * If we are the dealer we loop until our hand is worth atleast 17.
      * @param string $player
      * @return array<int, array{ suit: string, card: string, graphic: string }>
      */
@@ -82,19 +87,25 @@ class BlackJack
     }
 
 
-    /** @return array<int, array{ card: string, graphic: string }> */
+    /**
+     * Here is where we return our player hand.
+     * @return array<int, array{ card: string, graphic: string }> */
     public function playerHand(): array
     {
         return $this->playerHand;
     }
 
-    /** @return array<int, array{ card: string, graphic: string }> */
+    /**
+     * Here is where we return our dealer hand.
+     * @return array<int, array{ card: string, graphic: string }> */
     public function dealerHand(): array
     {
         return $this->dealerHand;
     }
 
-    /** @return string */
+    /**
+     * Here is where we check the state of our game and see which player won.
+     * @return string */
     public function gameOver(): string
     {
         $playerScore = $this->getScore($this->playerHand);
@@ -103,7 +114,7 @@ class BlackJack
         if ($playerScore == 21) {
             return 'Player won';
         } elseif ($dealerScore == 21) {
-            return 'Player won';
+            return 'Dealer won';
         }
 
         if ($playerScore > 21) {
@@ -125,6 +136,27 @@ class BlackJack
         return 'No Score';
     }
 
+
+    /**
+     * I used this for the test and its where we can decide how our players hand should look.
+     * @param array<int, array{suit: string, card: string, graphic: string}> $hand
+     * @return array<int, array{ card: string, graphic: string }> */
+    public function setPlayerHand(array $hand): array
+    {
+        $this->playerHand = $hand;
+        return $this->playerHand;
+    }
+
+
+    /**
+     * I used this for the test and its where we can decide how our dealers hand should look.
+     * @param array<int, array{suit: string, card: string, graphic: string}> $hand
+     * @return array<int, array{ card: string, graphic: string }> */
+    public function setDealerHand(array $hand): array
+    {
+        $this->dealerHand = $hand;
+        return $this->dealerHand;
+    }
 
 
 }

@@ -7,7 +7,6 @@ use App\Cards\CardGraphic;
 
 class DeckOfCards
 {
-
     protected $cards = [];
 
     public function __construct()
@@ -112,15 +111,5 @@ class DeckOfCards
         shuffle($this->cards);
         return $this->cards;
     }
-
-    /**
-     * @return array<int, array{ suit: string, card: string, graphic: string }>
-     */
-    public function sort(): array
-    {
-        sort($this->cards);
-        return $this->cards;
-    }
-
 
 }
