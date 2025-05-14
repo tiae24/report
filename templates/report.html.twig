@@ -129,6 +129,60 @@ Tror inte jag hade jobbat med klasser i php förut så visste inte riktigt att m
                     Lint delen var det största jag lärde mig, hade ju inte fixat några kommentarer och förklaringar av vad funktionerna gjorde så behövda kolla på https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type och läsa massa där för att ta reda på hur jag skulle fixa fel meddelandena jag fick.
                 </p>
 
+
+
+                <h2 id="kmom04" class="reports">kmom04</h2>
+
+                <p>
+                    Det kändes ganska bra att skriva koden för att göra tester, det är ju inte de mest komplicerade testerna men det gjorde jobbet. Det var väldigt likt det vi gjorde i pythonkursen vill jag säga där vi gjorde tester för våra klasser och det funkade nästan på exakt samma sätt utan att kod språket vi använder är ju så klart olika, men principerna är ju nästan exakt samma.
+                </p>
+
+                <p>
+                    Men det har varit väldigt skönt och coolt att jobba med PHPUnit, jag tycker man fick ändå en liten bättre bild på av sakerna man kanske hade missat i klasserna som t.ex att man kunde göra en egen hand utan att behöva dra kort (så det inte är slumpmässigt).
+                </p>
+
+                <p>
+                    Tyckte det även var skönt att man hade en sida man kunde kolla och se hur testerna gick och om de var tillräckligt bra och hur mycket av ens kod testerna täckte.
+                </p>
+
+                <p>
+                    Jag lyckades nå 100% kodtäckning för de 4 klasserna jag använde i kortspelet, eftersom kunde se exakt vad av koden mina tester täckte så var det ju lätt att lista ut vad jag behövde testa, och visa klasser som cardGraphic och Cards var ju super korta och var nästan täckta innan jag ens gjorde testerna.
+                </p>
+
+                <p>
+                    Den mesta av min kod var testbar så det gick ändå ganska bra att testa, hade en sak som jag var osäker på hur jag skulle lösa men kom på att jag inte behövde ha kvar den funktion i klassen DeckOfCards, så jag tog bara bort den (det var sort metoden jag tog bort).
+                </p>
+
+                <p>
+                    Men sen stötte jag på lite problem när jag skulle testa scoring och kolla om blackjack matchen var över och vem som vann eftersom det är svårt att testa när det man får tillbaka är random, så jag gjorde så jag kunde välja hur spelarens och dealerns händer skulle se ut för att sedan underlätta testningen. Annars skulle jag säga att allt gick och testa, gjorde bara olika scenarion som t.ex testade ifall dealern fick 21, över 21 osv.
+                </p>
+
+                <p>
+                    Som jag nämnde tidigare så var det vara att jag tog bort saker som inte behövdes som min sort() eftersom självaste metoden användes inte, så jag tog bara bort den och jag var också lite osäker på hur jag skulle testa den.
+                </p>
+
+                <p>
+                    Men sen gjorde jag två metoder där jag kunde välja hur dealerns och spelarens hand skulle se ut vilket gjorde att jag egentligen inte behövde ändra andra delar i koden eftersom jag behövde inte dra random kort för att få mina händer, eller t.ex lägga till så jag kunde välja vilket kort jag skulle få när jag drog ett kort.
+                </p>
+
+                <p>
+                    Men jag tänkte bara att det kunde vara bra att ha ett sätt att kunna skapa mina egna händer och så underlättade det för när jag skulle skriva testerna.
+                </p>
+
+                <h3> Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”. </h3>
+
+                <p>
+                    Både ja och nej skulle jag säga, det blir lättare att testa koden ifall den redan var bra skriven och lätt att förstå eftersom då vet jag allting i metoderna gör och hur jag ska testa det, samt så behöver jag inte skriva lika mycket saker för att testa allting i metoden.
+                </p>
+
+                <p>
+                    Så t.ex när jag skulle testa delen i blackjack för vem som vann blev det lite mer att skriva eftersom det finns så många scenarion jag måste testa vilket kanske gör att koden inte blev lika snygg och ren, medans när jag skulle testa något som att dra ett kort var det ju bara att dra ett kort och se att jag fick någonting och att det var ett kort.
+                </p>
+
+                <p>
+                    Jag skulle säga att den “största” jag lärde mig i den här delen var om att dokumentera och hur man gör det, kom ju upp mycket fel t.ex varför en klass var “fel skriven” för man inte hade dokumenterat att man returnade något och vad man returnade, som tur så fanns https://phpstan.org/writing-php-code/phpdocs-basics där jag kunde få exempel på hur man skulle dokumentera vissa saker som t.ex arrays.
+                </p>
+
             </article>
         </main>
     </div>
