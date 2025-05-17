@@ -50,6 +50,18 @@ class QuoteController extends AbstractController
                 'metod' => 'GET',
                 'beskrivning' => 'Kolla på hur kortspelets omgång ser ut',
                 'name' => 'api_game'
+            ],
+            [
+                'route' => '/api/library/books',
+                'metod' => 'GET',
+                'beskrivning' => 'Visa alla böcker',
+                'name' => 'api_book_show_all'
+            ],
+            [
+                'route' => '/api/library/book/:isbn',
+                'metod' => 'GET',
+                'beskrivning' => 'Visa en bok',
+                'name' => 'api_book_by_isbn'
             ]
             ];
 

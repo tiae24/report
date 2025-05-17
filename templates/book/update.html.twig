@@ -1,0 +1,30 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+
+
+    <form action="{{ path('update_book', { 'id' : books.id }) }}" method="post">
+        <label for="title">Title:</label><br>
+
+        <input type="text" id="title" name="title" value="{{ books.title }}"><br><br>
+
+         <label for="writer">Writer:</label><br>
+
+        <input type="text" id="writer" name="writer" value="{{ books.writer }}"><br><br>
+
+        <label for="ISBN">ISBN:</label><br>
+
+        <input type="text" id="ISBN" name="ISBN" value="{{ books.isbn }}"><br><br>
+
+        <label for="image">Image:</label><br>
+
+        <input type="text" id="image" name="image" value="{{ books.image }}"><br><br>
+
+        <input class="button" type="submit" value="Submit">
+    </form> 
+
+
+{% endblock %}

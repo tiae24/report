@@ -1,0 +1,45 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+
+    <main class="main2">
+    <table class="books">
+        <tr>
+            <th>Image</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Writer</th>
+            <th>ISBN</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td>
+                <a href="{{ path('book_view_one', { 'isbn' : book.getISBN|e }) }}">
+                    <img src="{{ asset('img/' ~ book.getImage|e) }}" width="80px">
+                </a>
+            </td>
+            <td>{{ book.getId|e }}</td>
+            <td>{{ book.getTitle|e }}</td>
+            <td>{{ book.getWriter|e }}</td>
+            <td>{{ book.getISBN|e }}</td>
+            <td>
+                <a href="{{ path('show_book', { 'id' : book.id|e }) }}">
+                    EDIT
+                </a>
+            </td>
+            <td>
+                <a href="{{ path('book_delete_by_id', { 'id' : book.getId|e }) }}">
+                    DELETE
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    </main>
+
+{% endblock %}

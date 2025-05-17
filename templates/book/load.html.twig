@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+    <div class="main-body">
+
+    {% for routes in route %}
+
+        <h3 class="route">{{ routes.route }}</h3>
+
+        <h3>{{ routes.name }}</h3>
+
+        <p>{{ routes.beskrivning }}</p>
+
+        {% if routes.name == 'book_view_one' %}
+
+            <form action="{{ path(routes.name, { isbn: 9780795300622 }) }}" method="{{routes.metod}}">
+                <button>Go!</button>
+            </form>
+        
+
+        {% elseif routes.name == 'book_delete_by_id' %}
+
+            <form action="{{ path(routes.name, { id: 19 }) }}" method="{{routes.metod}}">
+                <button>Go!</button>
+            </form>
+
+        {% elseif routes.name == 'book_view_one' %}
+
+            <form action="{{ path(routes.name, { isbn: 9780795300622 }) }}" method="{{routes.metod}}">
+                <button>Go!</button>
+            </form>
+
+        {% elseif routes.name == 'show_book' %}
+
+            <form action="{{ path(routes.name, { id: 18 }) }}" method="{{routes.metod}}">
+                <button>Go!</button>
+            </form>
+
+        {% else %}
+
+            <button onclick="window.location.href='{{ path(routes.name) }}';">
+                Go!
+            </button>
+
+        {% endif %}
+
+    {% endfor %}
+
+
+
+
+    </div>
+    
+{% endblock %}

@@ -21,6 +21,12 @@
             <button>Go!</button>
         </form>
 
+        {% elseif routes.name == 'api_book_by_isbn' %}
+
+        <form action="{{ path(routes.name, { isbn: 9780795300622 }) }}" method="{{routes.metod}}">
+            <button>Go!</button>
+        </form>
+
         {% else %}
 
         <form action="{{ path(routes.name) }}" method="{{routes.metod}}">

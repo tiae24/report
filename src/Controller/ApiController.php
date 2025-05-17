@@ -12,6 +12,9 @@ use App\Cards\Cards;
 use App\Cards\DeckOfCards;
 use App\Cards\CardGraphic;
 use App\Cards\BlackJack;
+use App\Repository\BookRepository;
+use App\Entity\Book;
+use Doctrine\Persistence\ManagerRegistry;
 
 class ApiController extends AbstractController
 {
@@ -129,6 +132,26 @@ class ApiController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
+    }
+
+    #[Route('api/library/books', name: 'api_book_show_all', methods: ['GET'])]
+    public function showAllProduct(
+        BookRepository $bookRepository
+    ): Response {
+        $book = $bookRepository
+            ->findAll();
+
+        return $this->json($book);
+    }
+
+    #[Route('api/library/book/{isbn}', name: 'api_book_by_isbn')]
+    public function showBookByISBN(
+        BookRepository $bookRepository,
+        string $isbn
+    ): Response {
+        $book = $bookRepository->findBookISBN($isbn);
+
+        return $this->json($book);
     }
 
 }

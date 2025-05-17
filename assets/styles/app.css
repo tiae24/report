@@ -192,3 +192,82 @@ h5 {
     font-size: 0.53em;
 }
 
+
+.main {
+    margin: 0 auto;
+}
+
+.div_flex {
+    display: flex;
+    height: auto;
+}
+
+.specific_article {
+    width: 700px;
+    padding-left: 20px;
+}
+
+.books {
+    border-collapse: collapse;
+}
+
+.books td, .books th {
+    padding: 0.5rem 1.8rem;
+}
+
+.books th{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 15px;
+}
+
+.books tr:nth-child(even){
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+.books tr:nth-child(odd){
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.main2 {
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 900px;
+    padding-bottom: 50px;
+}
+
+
+
+label {
+    font-weight: bold;
+    margin: 2rem 0 0;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.button {
+    color: #fff;
+    background-image: linear-gradient(#0F0, #32CD32);
+    border: 1px solid #ccc;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.4rem;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    line-height: 1.4;
+}

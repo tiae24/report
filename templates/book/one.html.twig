@@ -1,0 +1,23 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+    <main class="main">
+    <div class="div_flex">
+    <div class="specific_image">
+        <img src="{{ asset('img/' ~ books[0]['image'])}}" height="600px">
+    </div>
+        <div class="specific_article">
+            {% for book in books %}
+                <h2>{{ book['title'] }}</h2>
+                <h3>{{ book['writer'] }}</h3>
+                <li>ISBN: <b>{{ book['isbn'] }} </b> </li>
+                <li>ID: {{ book['id'] }}</li>
+            {% endfor %}
+        </div>
+    </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+    <main class="main">
+    <form action="{{ path('book_create') }}" method="post">
+        <label for="title">Title:</label><br>
+
+        <input type="text" id="title" name="title"><br><br>
+
+         <label for="writer">Writer:</label><br>
+
+        <input type="text" id="writer" name="writer"><br><br>
+
+        <label for="ISBN">ISBN:</label><br>
+
+        <input type="text" id="ISBN" name="ISBN"><br><br>
+
+        <label for="image">Image:</label><br>
+
+        <input type="text" id="image" name="image"><br><br>
+
+        <input class="button" type="submit" value="Submit">
+    </form> 
+    </main>
+
+{% endblock %}
