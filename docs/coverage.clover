@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747525025">
-  <project timestamp="1747525025">
+<coverage generated="1748128493">
+  <project timestamp="1748128493">
     <file name="/home/tim/dbwebb-kurser/mvc/me/report/src/Cards/BlackJack.php">
       <class name="App\Cards\BlackJack" namespace="global">
         <metrics complexity="26" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="54" elements="62" coveredelements="62"/>
@@ -14,15 +14,15 @@
       <line num="37" type="stmt" count="9"/>
       <line num="38" type="stmt" count="9"/>
       <line num="39" type="stmt" count="9"/>
-      <line num="40" type="stmt" count="3"/>
+      <line num="40" type="stmt" count="2"/>
       <line num="41" type="stmt" count="9"/>
       <line num="42" type="stmt" count="1"/>
       <line num="43" type="stmt" count="9"/>
-      <line num="44" type="stmt" count="4"/>
+      <line num="44" type="stmt" count="3"/>
       <line num="45" type="stmt" count="9"/>
-      <line num="46" type="stmt" count="6"/>
+      <line num="46" type="stmt" count="7"/>
       <line num="47" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="8"/>
+      <line num="49" type="stmt" count="9"/>
       <line num="50" type="stmt" count="3"/>
       <line num="52" type="stmt" count="9"/>
       <line num="55" type="stmt" count="10"/>
