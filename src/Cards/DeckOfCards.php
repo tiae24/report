@@ -7,7 +7,7 @@ use App\Cards\CardGraphic;
 
 class DeckOfCards
 {
-    protected $cards = [];
+    protected array $cards = [];
 
     public function __construct()
     {

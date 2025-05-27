@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2025-05-19 22:22:53        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2025-05-27 19:52:12        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -74,10 +74,10 @@
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(68.75 %)</small>
+                <small>(73.68 %)</small>
             </div>
             <div class="number">
-                11            </div>
+                14            </div>
         </div>
     </div>
 </div>
@@ -114,6 +114,28 @@
                                     </td>
                                                             </tr>
                                                         <tr>
+                                <td><span class="path">App\Cards\BlackJackWinner</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 1);">
+                                        9                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.07);">
+                                        0.07                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Cards\BlackJackHand</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.88);">
+                                        8                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.11);">
+                                        0.11                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
                                 <td><span class="path">App\Repository\BookRepository</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
@@ -127,12 +149,12 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\GameController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.11);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.25);">
                                         3                                        </span>
                                     </td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.21);">
-                                        0.21                                        </span>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.2);">
+                                        0.2                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -160,7 +182,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\BookController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.11);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.25);">
                                         3                                        </span>
                                     </td>
                                                                     <td>
@@ -177,6 +199,17 @@
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.39);">
                                         0.39                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
+                                <td><span class="path">App\Controller\MetricsController</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        1                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        0                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -197,8 +230,8 @@
                                         1                                        </span>
                                     </td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.28);">
-                                        0.28                                        </span>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.27);">
+                                        0.27                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -264,7 +297,7 @@
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            19                                        </span>
+                                            4                                        </span>
                                         <span class="path">App\Cards\BlackJack</span>
                                                                     </td>
                             </tr>
@@ -556,7 +589,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\BlackJackTest","time":0.017618},{"name":"App\\Cards\\CardGraphicTest","time":0.000545},{"name":"App\\Cards\\CardsTest","time":0.001216},{"name":"App\\Cards\\DeckOfCardsTest","time":0.003485},{"name":"App\\Dice\\DiceTest","time":0.000996}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\BlackJackTest","time":0.016441},{"name":"App\\Cards\\CardGraphicTest","time":0.00049},{"name":"App\\Cards\\CardsTest","time":0.000974},{"name":"App\\Cards\\DeckOfCardsTest","time":0.0033},{"name":"App\\Dice\\DiceTest","time":0.000812}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {

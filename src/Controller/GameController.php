@@ -17,7 +17,6 @@ class GameController extends AbstractController
 {
     #[Route("/game/session", name: "gameSession")]
     public function gameSession(
-        SessionInterface $session
     ): Response {
         /** @var BlackJack $deck */
         $deck = new BlackJack();
@@ -42,7 +41,6 @@ class GameController extends AbstractController
 
     #[Route('/game', name: "startGame")]
     public function startGame(
-        Request $request,
         SessionInterface $session
     ): Response {
 
@@ -104,8 +102,6 @@ class GameController extends AbstractController
 
     #[Route('/game/doc', name: "gameDocumentation")]
     public function gameDoc(
-        Request $request,
-        SessionInterface $session
     ): Response {
 
         return $this->render('game/doc.html.twig');

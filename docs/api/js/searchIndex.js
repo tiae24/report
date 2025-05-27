@@ -8,7 +8,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Here\u0020we\u0020get\u0020out\u0020Deck,\u0020and\u0020Classes\u0020that\u0020we\u0020use\u0020to\u0020get\u0020scores\u0020and\u0020winners.",
             "url": "classes/App-Cards-BlackJack.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetScore\u0028\u0029",
@@ -51,6 +51,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Cards-BlackJack.html#property_deck"
         },                {
+            "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A\u0024hand",
+            "name": "hand",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJack.html#property_hand"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A\u0024winner",
+            "name": "winner",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJack.html#property_winner"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackHand",
+            "name": "BlackJackHand",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackHand.html"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AgetScore\u0028\u0029",
+            "name": "getScore",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackHand.html#method_getScore"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackWinner",
+            "name": "BlackJackWinner",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackWinner.html"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AgameOver\u0028\u0029",
+            "name": "gameOver",
+            "summary": "Here\u0020is\u0020where\u0020we\u0020check\u0020the\u0020state\u0020of\u0020our\u0020game\u0020and\u0020see\u0020which\u0020player\u0020won.",
+            "url": "classes/App-Cards-BlackJackWinner.html#method_gameOver"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AhasBlackJack\u0028\u0029",
+            "name": "hasBlackJack",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackWinner.html#method_hasBlackJack"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AhasBust\u0028\u0029",
+            "name": "hasBust",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackWinner.html#method_hasBust"
+        },                {
             "fqsen": "\\App\\Cards\\CardGraphic",
             "name": "CardGraphic",
             "summary": "",
@@ -63,12 +103,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Here\u0020we\u0020get\u0020the\u0020card\u0020\u0022image\u0022\u0020based\u0020on\u0020the\u0020suit\u0020and\u0020value.",
             "url": "classes/App-Cards-CardGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003A\u0024representation",
             "name": "representation",
-            "summary": "",
+            "summary": "This\u0020is\u0020where\u0020we\u0020will\u0020get\u0020a\u0020card\u0020\u0022image\u0022\u0020based\u0020on\u0020the\u0020suit\u0020and\u0020value.",
             "url": "classes/App-Cards-CardGraphic.html#property_representation"
         },                {
             "fqsen": "\\App\\Cards\\Cards",
@@ -380,6 +420,16 @@ Search.appendIndex(
             "name": "report",
             "summary": "",
             "url": "classes/App-Controller-LuckyControllerTwig.html#method_report"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController",
+            "name": "MetricsController",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController\u003A\u003AMetrics\u0028\u0029",
+            "name": "Metrics",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html#method_Metrics"
         },                {
             "fqsen": "\\App\\Controller\\QuoteController",
             "name": "QuoteController",
