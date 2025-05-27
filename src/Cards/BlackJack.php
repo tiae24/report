@@ -6,6 +6,11 @@ use App\Cards\DeckOfCards;
 use App\Cards\BlackJackHand;
 use App\Cards\BlackJackWinner;
 
+/**
+ * Class BlackJack.
+ * 
+ * Here is everything for the game, from drawing a card, to scoring a hand.
+ */
 class BlackJack
 {
     /** @var DeckOfCards */
@@ -27,7 +32,10 @@ class BlackJack
 
 
     /**
+     * Constructor.
+     * 
      * Here we get out Deck, and Classes that we use to get scores and winners.
+     * @return void
      */
     public function __construct()
     {
@@ -40,7 +48,7 @@ class BlackJack
      * Here is where we get score for the players and dealers hand
      * With an ace and the face cards we give them a numerical value instead.
      * @param array<int, array{ card: string, graphic: string }> $hand
-     * @return int
+     * @return int $score. Which is the score for a hand.
      */
     public function getScore(array $hand): int
     {

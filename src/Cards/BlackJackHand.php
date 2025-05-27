@@ -11,7 +11,6 @@ class BlackJackHand
      */
     public function getScore(array $hand): int
     {
-        $score = "";
         $actualscore = 0;
         foreach ($hand as $card) {
             $scoreTest = substr($card['card'], 1);

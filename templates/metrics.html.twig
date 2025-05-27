@@ -68,7 +68,7 @@
             under 35% är dåligt.
         </p>
 
-        <img src="Coverage.PNG">
+        <img src="{{ asset('img/Coverage.PNG') }}" width="100%">
 
         <h4>
             Complexity
@@ -96,7 +96,7 @@
             kanske ha en Hand klass som sparar kort handen och jobbar med den.
         </p>
 
-        <img src="Complexity.PNG">
+        <img src="{{ asset('img/Complexity.PNG') }}" width="100%">
 
         <h4>
             Cohesion
@@ -118,6 +118,8 @@
             Ett bra värde man vill ha på sin kod för att visa att man har bra cohesion är så nära 1 som möjligt, i mitt fall så har jag 1 för BlackJack, DeckOfCards och Cards 
             Detta är ju förståt eftersom jag har delat upp all i 3 olika klasser så alla klasser inte behöver göra lika mycket och kan istället använda sig utav varandra.
         </p>
+
+        <img src="{{ asset('img/Cohesion.PNG') }}" width="100%">
 
         <h4>
             Coupling
@@ -158,6 +160,8 @@
             dem på en api sida, eller bara för att t.ex visa ett kort, en kortlek osv.
         </p>
 
+        <img src="{{ asset('img/Coupling.PNG') }}" width="100%">
+
         <h4>
             CRAP
         </h4>
@@ -190,9 +194,7 @@
             men jag har väldigt många tester som kollar att alla if satser funkar vilket så klart hjälper med CRAP scoren.
         </p>
 
-        <p>
-            
-        </p>
+        <img src="{{ asset('img/Crap.PNG') }}" width="100%">
 
 
 
@@ -217,7 +219,7 @@
 
         </p>
 
-        <img src="">
+        <img src="{{ asset('img/phpmetrics1.PNG') }}" width="100%">
 
         <p>
             Något annat jag skulle kunna förbättra är klassen CardsGraphic som bara har en CC på 1 men en Maintainability på 56.
@@ -235,14 +237,6 @@
 
         <img src="">
 
-        <p>
-            Så jag delade upp BlackJack och gjorde två nya klasser, BlackJackHand och BlackJackWinner, BlackJackHand som ger oss våran Score för våran hand och 
-            BlackJackWinner som visar vem som vann "matchen".
-
-            Så nu har vi delat upp så BlackJack har 4 CC och 83 MI, BlackJackHand 8 CC 73 MI, och BlackJackWinner har 9 CC 76 MI.
-        </p>
-        
-
         
         <h2>
             Scrutinizer
@@ -254,7 +248,8 @@
             och hur dem såg ut, så det är inte direkt något stort fel.
         </p>
 
-        <img src="srutinizer.PNG">
+        
+        <img src="{{ asset('img/scrutinizer.PNG') }}" width="20%">
 
         <p>
             Mina Crap scores var inte häller särskilt höga eftersom jag hade rätt bra tester för min kod, hade 100% coverage på alla mina klasser vilket gjorde att 
@@ -263,11 +258,8 @@
             men bara 4 var Major och det var på filer som jag inte använde sen hade jag 24 minor issues vilket var för det mesta kommentarer som var fel.
         </p>
 
-        <img src="Crap.PNG">
+        <img src="{{ asset('img/Crap.PNG') }}" width="40%">
 
-        BADGES---------------------------------------------------------------------------------------------------------------------------------------
-
-        <img src="issues.PNG">
 
         <p>
             En sak jag skulle kunna fixa var ju såklart 2 Major problem för min QuoteController där jag har råkat ha en return efter 
@@ -275,7 +267,10 @@
             problem att fixa och det är för första kursmomentet där vi jobbade med att visa en random quote.
         </p>
 
-        <img src="scruIssues.PNG">
+        <img src="{{ asset('img/issues.PNG') }}" width="40%">
+
+
+        <img src="{{ asset('img/scruIssues.PNG') }}" width="80%">
 
         <p>
             En anna sak som jag skulle vilja förbättra är att få betygen på mina metoder som hade b att bli A, tror det kan vara kommentarer som orsakar problemet 
@@ -285,7 +280,7 @@
             har redan givit mig ett bra score på allting.
         </p>
 
-        <img src="ScruRatings.PNG">
+        <img src="{{ asset('img/ScruRatings.PNG') }}" width="50%">
 
         <p>
             Jag skulle även kunna försöka göra tester till mina controllers för att öka min coverage på min kod, först ju nu har jag 100% på alla klasser men 
@@ -293,7 +288,7 @@
             Just nu har jag ju bara 20% total coverage och mina controllesr är ju bulken av koden så ökar jag den så ökas coverage för hela koden väldigt mycket.
         </p>
 
-        <img src="scruCoverage.PNG">
+        <img src="{{ asset('img/scruCoverage.PNG') }}" width="100%">
 
         <h2>
             Förbättringar
@@ -306,6 +301,25 @@
             Detta kommer sänka min Cyclomatic Complexity för BlackJack klassen samt öka Maintainability Indexen på koden eftersom den nu är uppdelade i mindre delar. 
         </p>
 
+        <h3>
+            Förbättringen
+        </h3>
+        <img src="{{ asset('img/Complexity.PNG') }}" width="100%">
+        <img src="{{ asset('img/MI.PNG') }} " width="100%">
+
+        <ul>
+            <li>BlackJack: - Från -> 19CC, 69MI,  Till -> 4CC,  85 MI</li>
+            <li>BlackJackHand 75 MI</li>
+            <li>BlackJackWinner 80MI</li>
+            <li>DeckOfCards 74 MI</li>
+            <li>Dice 60MI till 99.9MI</li>
+        </ul>
+
+        <p>
+            Sedan så fixade jag även några av dem mindre från under 65 MI till över 85 MI.
+        </p>
+
+
         <p>
             Den andra saken jag har tänkt förbättra är issuesen jag har fått i Scrutinizer, jag har 4 major, 2 är inte från min kod så det blir svårt att förbättra 
             dem men dem andra 2 är väldigt simpla att fixa, det är att jag har 2 returns efter en viss kod som gör att dem är omöjliga att köra och är bara 
@@ -316,13 +330,32 @@
 
 
         <p>
-            
+            Jag tänker även fixa så att jag har kodtäcking på minst 50% totalt, så då måste jag fixa tester till mina controllers eftersom jag redan har 100% på 
+            alla mina Klasser, 
         </p>
+
+        <img src="{{ asset('img/ControllerTest.PNG') }}" width="100%">
+
+        <h2>
+            Efter Förbättrningen
+        </h2>
+
+        <h3>
+            Totala Coverage
+        </h3>
+
+        <img src="{{ asset('img/coverage2.PNG') }}" width="100%">
+
+        <h3>
+            Controllers Coverage
+        </h3>
+
+        <img src="{{ asset('img/Coverage3.PNG') }}" width="100%">
 
         
 
         <p>
-
+            https://scrutinizer-ci.com/g/tiae24/report/badges/coverage.png?b=main
         </p>
 
 

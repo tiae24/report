@@ -21,4 +21,16 @@ class DiceTest extends TestCase
         $res = $die->getAsString();
         $this->assertNotEmpty($res);
     }
+
+
+    public function testDiceRoll()
+    {
+        $die = new Dice();
+        $this->assertInstanceOf("\App\Dice\Dice", $die);
+
+        $value = $die->roll();
+
+        $res = $die->getAsString();
+        $this->assertNotEmpty($value);
+    }
 }

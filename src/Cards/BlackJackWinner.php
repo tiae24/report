@@ -19,16 +19,25 @@ class BlackJackWinner
 
 
         if ($dealerScore >= 17) {
-            if ($playerScore > $dealerScore) {
-                return 'Player won';
-            } elseif ($dealerScore > $playerScore) {
-                return 'Dealer won';
-            } elseif ($dealerScore == $playerScore) {
-                return 'Dealer won';
-            }
+            return ($this->BlackJackWinner($playerScore, $dealerScore));
         }
 
         return 'No Score';
+    }
+
+    /**
+     * @return string This is for if the dealer has stopped drawing, we check 
+     * who has the higher score.
+     */
+    private function BlackJackWinner(int $playerScore, $dealerScore): string
+    {
+        if ($playerScore > $dealerScore) {
+            return 'Player won';
+        } elseif ($dealerScore > $playerScore) {
+            return 'Dealer won';
+        } elseif ($dealerScore == $playerScore) {
+            return 'Dealer won';
+        }
     }
 
     /**
@@ -39,6 +48,9 @@ class BlackJackWinner
         return $score == 21;
     }
 
+    /**
+     * @return bool Return True if someones score is over 21, their hand bust.
+     */
     private function hasBust(int $score): bool
     {
         return $score > 21;

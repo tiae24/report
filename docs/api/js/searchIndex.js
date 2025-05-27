@@ -251,10 +251,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-BookController.html#method_library"
         },                {
-            "fqsen": "\\App\\Controller\\BookController\u003A\u003AdrawNumber\u0028\u0029",
-            "name": "drawNumber",
+            "fqsen": "\\App\\Controller\\BookController\u003A\u003AcreatingBook\u0028\u0029",
+            "name": "creatingBook",
             "summary": "",
-            "url": "classes/App-Controller-BookController.html#method_drawNumber"
+            "url": "classes/App-Controller-BookController.html#method_creatingBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AcreateBook\u0028\u0029",
             "name": "createBook",
