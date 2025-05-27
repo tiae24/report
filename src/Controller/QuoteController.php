@@ -70,8 +70,6 @@ class QuoteController extends AbstractController
         ];
 
         return $this->render('api.html.twig', $data);
-
-        return $response;
     }
 
     #[Route("/api/quote", name: "quote")]
@@ -123,7 +121,5 @@ class QuoteController extends AbstractController
         $selectedQuote = $quotes[$number];
 
         return $this->render('quotes.html.twig', $data);
-
-        return $response;
     }
 }

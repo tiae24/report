@@ -1,0 +1,330 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <h1>Main</h1>
+        <h3>Timothy</h3>
+        <p> Jag är Timothy, jag gillar att spela och går i skolan där jag lär mig att programmera, just nu går jag i kurserna webapp och mvc.</p>
+
+        <h1>
+            Introduktion
+        </h1>
+
+        <h4>
+            Codestyle
+        </h4>
+
+        <p>
+            Codestyle är ju hur våran kod är skriven och formaterad, vare sig det är hur variabel namnen är skrivna t.ex med CamelCase och snake_case och indentering.
+        </p>
+
+        <p>
+            Så Codestyle har ju inte direkt något med att ens kod funar att göra utan är mer för att göra ens kod mer lättläst vilket gör det lättare att veta 
+            vad allting i ens kod gör och att fel söka ifall något inte funkar.
+
+            Det finns ju inte direkt några värden som ger oss en score av hur bra ens kod är skriven, men vi kan ju använda oss utav saker som composer csfix som 
+            fixar så att koden blir skriven i en bra kodstil, eller andra saker som kanske visar oss varje linje som har något "fel" vare sig det är dåliga variabel namn 
+            eller att man saknar indentering.
+        </p>
+
+        <p>
+            I mitt fall så brukar jag bara skriva koden så bra som möjligt direkt eftersom det blir jobbigt att behöva gå över allting när man är klar eller att 
+            lita för mycket på composer csfix.
+            
+            Så kollar man på min kod så ser t.ex routes nästan exakt likadana ut, alltså är dem på samma "level" med indentering och är formatterad på samma sätt 
+            vilket gör det lättare att hålla koll på vad alla gör och felsöka eftersom man vet när dem börjar och slutar.
+        </p>
+
+        <p>
+            Även om man kollar på html koden så är den indenterad på ett speciellt sätt där om något är inom en klass så är den indenterad ett extra steg, 
+            i detta fall så är ju allting inom main, då är det ett steg höger indenterat från main så det blir lättare att läsa och se vad som tillhör klassen.
+        </p>
+
+        <h4>
+            Coverage
+        </h4>
+
+        <p>
+            Coverage är hur mycket av koden täcks av tester vare sig det är små tester eller stora, desto bätte Coverage man har desto mer felsäker är ens kod och 
+            desto mindre chans är det att något inte funkar eller att några speciella tillfällen funkar som de ska t.ex ifall man vill testa att det inte går 
+            att det inte går att skriva in en sträng där man vill ha en int.
+        </p>
+
+        <p>
+            Med Phpmetrics så kan vi kolla hur mycket av koden är täckt vare sig det är en linje eller en hel funktion.
+            I Detta fall så har alla mina klasser 100% täckning vare sig det är linjer vi kollar på eller funktionerna, det som gör PHPMetric så bra är att 
+            vi kan se exakt vad av koden som är täckt och vad som inte är, så jag viste ifall mina tester funkade eller inte och om dem täckte allt jag ville.
+        </p>
+
+        <p>
+            Detta gör att min kods "basics" funkar som de ska och den har inga "små" fel, 100% betyder ju såklart inte att koden är felfri men det gör att det mesta borde 
+            funka, sen kan man ju såklart göra fler tester som kollar olika scenarion.
+
+            I detta fall så med 100% täckning så kollar jag ifall alla sätt att vinna på kollas i testerna, så ifall dealern får 21, spelaren får 21 någon för över 21 osv.
+
+            Eftersom att jag har 100% kodtäckning så testas all kod, det betyder inte alla scenarion men någonting testas minst en gång, och över 70% anses som bra medans
+            under 35% är dåligt.
+        </p>
+
+        <img src="Coverage.PNG">
+
+        <h4>
+            Complexity
+        </h4>
+
+        <p>
+            Complexity är som det låter, hur komplicerad koden man har skrivit är, desto mer komplicerad ens kod är desto svårare blir det att testa 
+            och så kan koden få fler problem när den körs vare sig det är mindre problem eller om det är något stort problem. Det kan även vara svårare att 
+            förstå koden desto mer komplicerad den är eftersom det kan bli svårare att hålla koll på vad allting gör i din kod och hur koden hänger ihop.
+        </p>
+
+        <p>
+            Vi kan ta t.ex min kod, vi ser att BlackJack klassen har en Cyclomatic Complexity som är 19 och en Maintainability Index på 69 medans 
+            DeckOfCards bara har 7 i Cyclomatic Complexity och en Maintainability Index på 73.61, Desto lägre CC och högre MI desto bättre, just nu så är 
+            BlackJacks CC lite för hög och MI skulle kunna vara lite högre men det är inget super stort problem medans DeckOfCards inte är så farligt och är närmare
+            bra än dåligt.
+            Desto mer komplex och lägre MI desto mer problem kan koden få som chans att koden buggar.
+            I detta fallet så har jag bara ett score på 0.32 buggar för BlackJack klassen vilket betyder att det inte är så stor chans för några buggar i klassens kod,
+            och DeckOfCards har bara 0.21 vilket är såklart ännu mindre, jag har ju många tester som kollar att allt funkar som det ska.
+        </p>
+        <p>
+            Även så använder ju såklart BlackJack klassen DeckofCards vilket gör att ifall något är fel med 
+            DeckOfCards så kan de orsaka BlackJack klassen.
+            Men det är ju bättre så eftersom då behöver inte BlackJack klassen göra allting själv, så något som kunde underlätta blackjack klassen hade varit att 
+            kanske ha en Hand klass som sparar kort handen och jobbar med den.
+        </p>
+
+        <img src="Complexity.PNG">
+
+        <h4>
+            Cohesion
+        </h4>
+
+        <p>
+            Cohesion är hur bra klassen och det den gör i metoder håller ihop, alltså så kollar man så att ens klass inte gör för mycket olika saker som skulle 
+            kunna göras i andra klasser.
+            Cohesion mäts i LCOM, vilket betyder "Lack of cohesion of methods", desto högre värde man har desto lägra är ens cohesion alltså desto sämre är ens kod.
+
+        </p>
+
+        <p>
+            Cohesion är viktig eftersom det är viktigt att nästan dela upp sin kod i delar, i vårt fall så har vi delat upp så vi har en kort klass, en Däck klass 
+            och en BlackJack klass, egentligen skulle vi kunna haft allt i en och samma klass men det hade bara gjort svårare att förstå och koden hör inte ihop lika bra.
+        </p>
+
+        <p>
+            Ett bra värde man vill ha på sin kod för att visa att man har bra cohesion är så nära 1 som möjligt, i mitt fall så har jag 1 för BlackJack, DeckOfCards och Cards 
+            Detta är ju förståt eftersom jag har delat upp all i 3 olika klasser så alla klasser inte behöver göra lika mycket och kan istället använda sig utav varandra.
+        </p>
+
+        <h4>
+            Coupling
+        </h4>
+
+        <p>
+            Coupling är hur klasser hör ihop med varandra, Man räcknar det i 2 värden.
+        </p>
+
+        <p>
+            Afferent coupling (AC), är värdet för hur många klasser som använder sig och påverkas av denna klassen, så ifall klass Y och Z använder sig av klassen X så får den värdet 2 EC (OUTGOING).
+        </p>
+
+        <p>
+            Efferent coupling (EC) detta är för hur många klasser denna klassen använder, så ifall klass X använder sig utav Y och Z så har en ett EC (incoming) värde på 2.
+        </p>
+
+        <p>
+            Som jag nämde tidigare så vill man ju såklart inte att en klass ska göra för mycket arbete, men man vill ju även inte göra så att en klass behöver använda
+            sig utav för många klasser, högt EC värdet, eftersom då om något går fel på en av klasserna kan hela klassen sluta funka, det blir nästan som om man har 
+            massa sladdar i en låda, tom knyter ihop sig själva och så blir det svårt att ta los dem.
+        </p>
+
+        <p>
+            Man kan även ha att för många klasser använder sig utav en klass högt AC värdet, detta är dåligt eftersom man måste vara försiktig när man gör ändringar i klassen 
+            eftersom det kan påverka flera olika klasser och få dem att sluta funka, vilket även gör att det blir svårare att fixa eftersom ifall man fixar ett problem 
+            så kan en annan klass sluta fixa.
+        </p>
+
+        <p>
+            Man vill alltså hitta en bra balans mellan att inte ha för många klasser som are relationer med varandra men även så vill man inte att en klass ska göra för mycket.
+            I mitt fall så har ingen av mina klasser särskilt höga värden eftersom koden och det vi har gjort så här långt i kursen inte har vara så komplicerat och stort, 
+            så mitt högsta värde är 3 AC (OUTGOING) för Cards och DeckOfCards, eftesrom BlackJack och CardsGraphic använder sig utav dem och andra klasser.
+        </p>
+
+        <p>
+            Sen så har ju såklart mina controllers lite högre EC värde, i detta fall är 6 högsta eftersom jag måste använde mig utav klasserna vare sig det är för att visa 
+            dem på en api sida, eller bara för att t.ex visa ett kort, en kortlek osv.
+        </p>
+
+        <h4>
+            CRAP
+        </h4>
+
+        <p>
+            Change Risk Analyzer and Predictor (CRAP) är ett värde på hur mycket arbete det tar för att fixa dåliga metoder i ens kod.
+
+            Räkning är baserad på hur komplex ens metoder och klasser är jämfört med hur många tester det finns för dem, så desto mer tester man har 
+            desto lägre CRAP score får man.
+
+            Så om man har bra och tillräckligt med tester så kan komplex kod fungera och ge bra CRAP scores.
+        </p>
+
+        <p>
+            CRAP visar ju hur "fel säker" våran kod är, desto högre score vi hade desto sämre är den och det blir alltså svårare att fixa, men som vi nämde så 
+            kan man ha en bra score även fast koden är komplex så koden man skriver kan ju vara komplex, CRAP scoren visar bara att koden kan vara komplex eller 
+            saknar tester. Så en score beror ju lite på båda hur komplicerad ens kod är och om man har tester som "städar" upp efter en och checkar att allt funkar 
+            som det ska.
+        </p>
+
+        <p>
+            I mitt fall så är det högsta CRAP scoren jag har fått 12 för en controller som är till för att köra blackjack spelet, men det är bara 12 vilket inte är så 
+            farligt, det som gör att routen har högt score är att den ger oss ett däck, kollar vilken knapp man klickar på i spelet, och kollar om spelet är slut 
+            beroende på vad man klickade på för knappar samt visar alla korten man har dragit.
+        </p>
+
+        <p>
+            Den högsta för en klass är GameOver metoden i BlackJack klassen där jag fick en CRAP score på 9, där man får både händerna och kollar vilka scores 
+            dem ger med if satser, det som gör att jag får en score på 9 är att det är många if satser som den kollar vilket gör att koden är lite komplicerad 
+            men jag har väldigt många tester som kollar att alla if satser funkar vilket så klart hjälper med CRAP scoren.
+        </p>
+
+        <p>
+            
+        </p>
+
+
+
+        <h2>
+            Phpmetrics
+        </h2>
+
+        <p>
+            Med PHPMetrics så får vi ju väldigt mycket nummer och saker vi kan kolla på i våran kod, så det finns ju mycket man kan kolla på som visar vad man 
+            skulle kunna förbättra.
+        </p>
+
+        <p>
+            Så något jag skulle kunna förbättra är BlackJack klassens Complexity, eftersom jag har en score på 19 CC vilket jag skulle vilja få bli lägre, 
+            något jag skulle kunna fixa är att dela upp gameOver metoden i flera metoder som jag kallar på för att kolla vem som vann istället för att kolla 
+            på vem som vann i. 
+        </p>
+
+        <p>
+            Eller så kan jag dela upp klassen i flera mindre klasser som har metoder jag kan kalla på för att få t.ex att få en hands score eftersom 
+            mina Coupling scores, både AC och EC är väldigt låga vilket gör att det inte skulle skada om jag gör lite fler relationer mellan klasserna
+
+        </p>
+
+        <img src="">
+
+        <p>
+            Något annat jag skulle kunna förbättra är klassen CardsGraphic som bara har en CC på 1 men en Maintainability på 56.
+            För att öka MI så skulle jag nog behöva lägga till kommentarer som förklarar var metoder gör eftersom koden är väldigt simpel och gör inte så mycket, så 
+            jag måste tänka på min Codestyle och hur viktig den är.
+        </p>
+
+        <img src="">
+
+        <p>
+            Jag skulle även kunna förbättra min ApiController, dens Cohesion är 6LCOM vilket är 3 högre än den som är näst högst, eftersom apiControllern har 
+            så många olika saker som den gör så skulle jag kanske kunna dela upp den i mindre delar som gör det lättare att hålla koll på allt som finns i den 
+            och gör så att den blir mindre komplex, eftersom just nu har jag ju alla olika saker som "testar" Cards, BlackJack, DeckOfCards klasserna och mera.
+        </p>
+
+        <img src="">
+
+        <p>
+            Så jag delade upp BlackJack och gjorde två nya klasser, BlackJackHand och BlackJackWinner, BlackJackHand som ger oss våran Score för våran hand och 
+            BlackJackWinner som visar vem som vann "matchen".
+
+            Så nu har vi delat upp så BlackJack har 4 CC och 83 MI, BlackJackHand 8 CC 73 MI, och BlackJackWinner har 9 CC 76 MI.
+        </p>
+        
+
+        
+        <h2>
+            Scrutinizer
+        </h2>
+
+        <p>
+            Jag fick en score på 9.88 på Scrutinizer vilket är väldigt bra, hade bara 2 saker som inte fick A i betyg vilket var gameOver och getScore metoderna 
+            vilket var dem metoderna som jag redan tänkte kanske behövde fixas. I detta fallet så var felet att kommentarer inte var riktigt korrekta för arraysen 
+            och hur dem såg ut, så det är inte direkt något stort fel.
+        </p>
+
+        <img src="srutinizer.PNG">
+
+        <p>
+            Mina Crap scores var inte häller särskilt höga eftersom jag hade rätt bra tester för min kod, hade 100% coverage på alla mina klasser vilket gjorde att 
+            det inte spelade någon roll ifall dem var lite komplexa. Däremot när man kollar så kan man se att min coverage bara är 20% men det är eftersom vi har 
+            så många test uppgifter eller annat som inte är nödvändigt för uppgiftenra vi har gjort som t.ex dice och sådant. En annan sak var att jag hade 28 "problem" 
+            men bara 4 var Major och det var på filer som jag inte använde sen hade jag 24 minor issues vilket var för det mesta kommentarer som var fel.
+        </p>
+
+        <img src="Crap.PNG">
+
+        BADGES---------------------------------------------------------------------------------------------------------------------------------------
+
+        <img src="issues.PNG">
+
+        <p>
+            En sak jag skulle kunna fixa var ju såklart 2 Major problem för min QuoteController där jag har råkat ha en return efter 
+            return $this->render('api.html.twig', $data); vilket såklart betyder att den andra returnen inte används och bara finns där, ett väldigt lätt 
+            problem att fixa och det är för första kursmomentet där vi jobbade med att visa en random quote.
+        </p>
+
+        <img src="scruIssues.PNG">
+
+        <p>
+            En anna sak som jag skulle vilja förbättra är att få betygen på mina metoder som hade b att bli A, tror det kan vara kommentarer som orsakar problemet 
+            så den kan ändå vara en ganska simpel lösning.
+            Om jag gör båda dem här sakerna så kan jag förmodligen öka min kvalitetsindex till 10 istället för att jag bara har 9.88 just nu, vilket inte är 
+            den största ökningen men har inte så mycket "fel" just nu eftersom när jag gjorde tidigare övningarna så fixade jag 100% coverage på mina klasser vilket 
+            har redan givit mig ett bra score på allting.
+        </p>
+
+        <img src="ScruRatings.PNG">
+
+        <p>
+            Jag skulle även kunna försöka göra tester till mina controllers för att öka min coverage på min kod, först ju nu har jag 100% på alla klasser men 
+            inga tester på mina controllers, vilket så klart kan leda till att man får fel eller att något kan gå snätt under speciella tillfällen.
+            Just nu har jag ju bara 20% total coverage och mina controllesr är ju bulken av koden så ökar jag den så ökas coverage för hela koden väldigt mycket.
+        </p>
+
+        <img src="scruCoverage.PNG">
+
+        <h2>
+            Förbättringar
+        </h2>
+
+        <p>
+            Jag har ju redan nämt flera flaws i min kod tidigare så nu är det dags att fixa några utav dem, den första saken jag vill förbättra i min kod är 
+            att dela upp in BlackJack klass för att göra den mindre komplex. Eftersom mina EC och AC värden inte är särskilt höga så kan jag ta fördel av det och 
+            dela upp och göra nya klasser som BlackJack klassen sen använder sig utav för att i detta fallet räkna ut värderna på ens hand och se vem som vann matchen.
+            Detta kommer sänka min Cyclomatic Complexity för BlackJack klassen samt öka Maintainability Indexen på koden eftersom den nu är uppdelade i mindre delar. 
+        </p>
+
+        <p>
+            Den andra saken jag har tänkt förbättra är issuesen jag har fått i Scrutinizer, jag har 4 major, 2 är inte från min kod så det blir svårt att förbättra 
+            dem men dem andra 2 är väldigt simpla att fixa, det är att jag har 2 returns efter en viss kod som gör att dem är omöjliga att köra och är bara 
+            där men gör ingenting. Sen vill jag även fixa så många issues som möjligt, just nu verkar måpnga av dem ha med kommentarer att göra så fixar jag dem 
+            kommer min kodstil vara mycket bättre och koden blir lättare att läsa och förstå särskilt när någon lärare ska rätta eller om man kommer tillbaka 
+            efter typ ett år och kollar på koden. Så om jag fixar dem här issues så kan Maintainability Index öka och issues kommer ju såklart försvinna / minska.
+        </p>
+
+
+        <p>
+            
+        </p>
+
+        
+
+        <p>
+
+        </p>
+
+
+    </main>
+{% endblock %}

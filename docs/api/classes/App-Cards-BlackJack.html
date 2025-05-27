@@ -180,9 +180,21 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Cards-BlackJack.html#property_hand">$hand</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Cards-BlackJackHand.html"><abbr title="\App\Cards\BlackJackHand">BlackJackHand</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/App-Cards-BlackJack.html#property_playerHand">$playerHand</a>
     <span>
                         &nbsp;: array&lt;int, array{suit: string, card: string, graphic: string}&gt;            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/App-Cards-BlackJack.html#property_winner">$winner</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Cards-BlackJackWinner.html"><abbr title="\App\Cards\BlackJackWinner">BlackJackWinner</abbr></a>            </span>
 </dt>
 
     </dl>
@@ -198,6 +210,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Here we get out Deck, and Classes that we use to get scores and winners.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Cards-BlackJack.html#method_dealerHand">dealerHand()</a>
@@ -279,7 +292,7 @@ With an ace and the face cards we give them a numerical value instead.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -341,9 +354,9 @@ With an ace and the face cards we give them a numerical value instead.</dd>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_playerHand">
-        $playerHand
-        <a href="classes/App-Cards-BlackJack.html#property_playerHand" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_hand">
+        $hand
+        <a href="classes/App-Cards-BlackJack.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -359,9 +372,81 @@ With an ace and the face cards we give them a numerical value instead.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Cards-BlackJackHand.html"><abbr title="\App\Cards\BlackJackHand">BlackJackHand</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$hand</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_playerHand">
+        $playerHand
+        <a href="classes/App-Cards-BlackJack.html#property_playerHand" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;int, array{suit: string, card: string, graphic: string}&gt;</span>
     <span class="phpdocumentor-signature__name">$playerHand</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_winner">
+        $winner
+        <a href="classes/App-Cards-BlackJack.html#property_winner" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">18</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Cards-BlackJackWinner.html"><abbr title="\App\Cards\BlackJackWinner">BlackJackWinner</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$winner</span>
+    </code>
 
     
     
@@ -392,11 +477,12 @@ With an ace and the face cards we give them a numerical value instead.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Here we get out Deck, and Classes that we use to get scores and winners.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -426,7 +512,7 @@ With an ace and the face cards we give them a numerical value instead.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -465,7 +551,7 @@ With an ace and the face cards we give them a numerical value instead.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -517,7 +603,7 @@ If we are the dealer we loop until our hand is worth atleast 17.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -539,6 +625,10 @@ If we are the dealer we loop until our hand is worth atleast 17.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Here it says either &quot;player won&quot; or &quot;dealer won&quot;</p>
+</section>
+
             </section>
 
 </article>
@@ -556,7 +646,7 @@ If we are the dealer we loop until our hand is worth atleast 17.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -606,7 +696,7 @@ With an ace and the face cards we give them a numerical value instead.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -645,7 +735,7 @@ With an ace and the face cards we give them a numerical value instead.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -694,7 +784,7 @@ With an ace and the face cards we give them a numerical value instead.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/BlackJack.php"><a href="files/src-cards-blackjack.html"><abbr title="src/Cards/BlackJack.php">BlackJack.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -844,7 +934,9 @@ With an ace and the face cards we give them a numerical value instead.</p>
                     <ul class="phpdocumentor-list -clean">
                                                     <li class=""><a href="classes/App-Cards-BlackJack.html#property_dealerHand">$dealerHand</a></li>
                                                     <li class=""><a href="classes/App-Cards-BlackJack.html#property_deck">$deck</a></li>
+                                                    <li class=""><a href="classes/App-Cards-BlackJack.html#property_hand">$hand</a></li>
                                                     <li class=""><a href="classes/App-Cards-BlackJack.html#property_playerHand">$playerHand</a></li>
+                                                    <li class=""><a href="classes/App-Cards-BlackJack.html#property_winner">$winner</a></li>
                                             </ul>
                 </li>
             

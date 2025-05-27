@@ -2,25 +2,38 @@
 
 namespace App\Cards;
 
-use App\Cards\Cards;
-use App\Cards\CardGraphic;
 use App\Cards\DeckOfCards;
+use App\Cards\BlackJackHand;
+use App\Cards\BlackJackWinner;
 
 class BlackJack
 {
     /** @var DeckOfCards */
     protected $deck;
 
-    /** @var array<int, array{ suit: string, card: string, graphic: string }> */
+    /** @var BlackJackHand */
+    protected $hand;
+
+    /** @var BlackJackWinner */
+    protected $winner;
+
+    /** 
+     * @var array<int, array{ suit: string, card: string, graphic: string }> 
+    */
     protected $playerHand = [];
 
     /** @var array<int, array{ suit: string, card: string, graphic: string }> */
     protected $dealerHand = [];
 
 
+    /**
+     * Here we get out Deck, and Classes that we use to get scores and winners.
+     */
     public function __construct()
     {
         $this->deck = new DeckOfCards();
+        $this->hand = new BlackJackHand();
+        $this->winner = new BlackJackWinner();
     }
 
     /**
@@ -31,28 +44,9 @@ class BlackJack
      */
     public function getScore(array $hand): int
     {
-        $score = "";
-        $actualscore = 0;
-        foreach ($hand as $card) {
-            $scoreTest = substr($card['card'], 1);
-            $score = (explode(",", $scoreTest));
-            if ($score[0] == 'K') {
-                $score[0] = 13;
-            } elseif ($score[0] == 'Q') {
-                $score[0] = 12;
-            } elseif ($score[0] == 'J') {
-                $score[0] = 11;
-            } elseif ($actualscore >= 8) {
-                if ($score[0] == 'A') {
-                    $score[0] = 1;
-                }
-            } elseif ($score[0] == 'A') {
-                $score[0] = 14;
-            }
-            $actualscore += (int) $score[0];
-        }
+        $score = $this->hand->getScore($hand);
 
-        return $actualscore;
+        return $score;
     }
 
     /**
@@ -105,36 +99,20 @@ class BlackJack
 
     /**
      * Here is where we check the state of our game and see which player won.
-     * @return string */
+     * @return string Here it says either "player won" or "dealer won" */
     public function gameOver(): string
     {
         $playerScore = $this->getScore($this->playerHand);
         $dealerScore = $this->getScore($this->dealerHand);
 
-        if ($playerScore == 21) {
-            return 'Player won';
-        } elseif ($dealerScore == 21) {
-            return 'Dealer won';
-        }
+        $winner = $this->winner->gameOver($dealerScore, $playerScore);
 
-        if ($playerScore > 21) {
-            return 'Dealer won';
-        } elseif ($dealerScore > 21) {
-            return 'Player won';
-        }
+        return $winner;
 
-        if ($dealerScore >= 17) {
-            if ($playerScore > $dealerScore) {
-                return 'Player won';
-            } elseif ($dealerScore > $playerScore) {
-                return 'Dealer won';
-            } elseif ($dealerScore == $playerScore) {
-                return 'Dealer won';
-            }
-        }
-
-        return 'No Score';
     }
+
+
+
 
 
     /**
