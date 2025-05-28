@@ -249,6 +249,73 @@ Tror inte jag hade jobbat med klasser i php förut så visste inte riktigt att m
                     Mitt TIL för detta kom var att man kan göra en databas sådär som en klass och hur den funkar, hade ingen aning att man kunde göra en så lätt där man inte behöver göra allting och självaste databasen funkar så lätt, och att man kan använda sig utav set och get för att skriva datan och få tillbaka datan.
                 </p>
 
+                <h2 id="kmom06" class="reports">kmom06</h2>
+
+                <p>
+                    Jag tyckte att phpmetrics var väldigt hjälpsamt, det gav mig en bra bild på vad i koden som kunde förbättras och varför en metod kanske kunde skapa problem eller inte var så optimerad som jag trodde den var.
+                </p>
+
+
+                <p>
+                    De sakerna som jag ansåg var mest hjälpsamma var Coupling, och Cyclomatic Complexity / Maintainability index, det känns nästan som att de gav mig all info jag behövde. De visade mig hur bra en klass funkade, hur komplicerad och hur “lätt” det var för den att funka / köras och sedan så visade ju Coupling hur mycket en klass använde / användes av andra klasser, man vill ju hitta en bra balans med att inte ha en klass som används / använder för många klasser eftersom då behöver man fler tester som verkligen gör att allting funkar som det ska, annars ifall det blir fel i någon klass kan ett flertal drabbas av det.
+                </p>
+
+
+                <p>
+                    Jag skulle även säga att Bilden som visade datan för CC och MI var den bästa eftersom den visualiserade datan vi hade så man fick en bild man kunde se vilken klass som var “sämst” och hur den jämfördes med en annan klass, då kunde man ju kolla och se varför en klass var sämre än den andra.
+                </p>
+
+
+                <p>
+                    Det gick ganska bra att få scrutinizer att funka men jag hade ett problem med det, när jag fixade mina tester för controllers för att öka min coverage så funkade det inte att köra dem i scrutinizer och jag fick felmeddelanden, men när jag körde dem lokalt så funkade mina tester och min coverage ökade, jag försökte läsa i githubs frågor och svar och på discord men hittade ingen lösning så var tvungen att ta bort den delen men annars gick det bra att använda och att förstå hur det funkade.
+                </p>
+
+
+                <p>
+                    Jag skulle säga att scrutinizer var bättre för att hitta fel i ens kod, man hade ju issues som visade exakt vad för problem det var man kunde lösa, jag skulle säga att scrutinizer var bättre att veta exakt vad som kunde lösas eftersom man hade betyg på metoderna och phpmetrics var bättre att visa vilken klass som hade problem, så det var ett bra “team” man hade, att om man fixade t.ex en metod så ökade ens CC och MI i phpmetrics, och ifall man fixade något i phpmetrics som att dela upp ens klasser så kunde det öka ens betyg eller sänka ens issues.
+                </p>
+
+
+                <p>
+                    Scrutinizer var jobbigare att använda eftersom det tog mycket längre tid att få det att köras eftersom man behöva pusha allt till github och sedan vänta i typ 6 minuter och ifall något gick fel var man tvungen att fixa felet och göra om det, så när jag använde mig av scrutinizer så försökte jag fixa så många saker som möjligt innan jag pushade upp något nytt på github.
+                </p>
+
+
+                <p>
+                    Badges man hade var ju inte direkt någon stort hjälp, man kunde ju redan se saker som coverage på docs/coverage vilket gick mycket snabbare att titta på och gav mig en bättre bild på vad som inte vad kodtäckt och vad som behövde fixas.
+                </p>
+
+
+                <p>
+                    Innan jag började så hade jag 9.88 i scrutinizer score med 2 metoder som hade fått ett B betyg och en coverage på 20%, min score ökades till 10 eftersom jag fixade metoderna när jag delade upp klasserna i 3 klasser och sedan metoderna i flera metoder som körde de olika delar som t.ex kollade ifall man fick 21, ifall man fick över 21 osv. 
+                </p>
+
+
+                <p>
+                    Min coverage ökades däremot inte så mycket eftersom jag hade redan gjort 100% på alla mina klasser innan jag började med kurs momentet vilket gjorde att det ändas som kunde ökas var små klasser som inte gav så mycket % och mina controllers men jag kunde inte köra mina controller tester på scrutinizer, dem funkade som sagt lokalt men inte på scrutinizer jag läste på discord att det skulle vara överkurs och hittade inget sätt att fixa det så min coverage gick bara upp till 26%, annars med testerna gick den upp till 78% på docs/coverage för alla saker i src mappen.
+                </p>
+
+
+                <p>
+                    Jag skulle säga att kod kvaliteten är extremt viktigt, det är basen av ens kod, det kan vara allt från att man har bra kodstil där allt ser snyggt och prydligt ut vilket gör koden lättläst och lätt att förstå, till att fixa så att koden har bra med tester som gör att allt funkar som det ska och inga buggar sker, men även saker som kollar hur bra ens klasser är uppbyggda (vilken CC dem har) och hur lätt den är att köra.
+                </p>
+
+
+                <p>
+                    Ens kod kvalite berättar ju så mycket om koden, man kanske inte behöver en den perfekta koden men en bra nivå som täcker majoriteten av ens kod är ju något man ska sträva efter, det är även något bra att tänka på när man skriver så man sätter det i baktanken så det nästan blir automatiskt när man skriver sin kod, vilket underlättar när man kanske har gjort något fel, eller gör så att man inte behöver ändra sina klasser för mycket och gör dem för komplicerade när man skriver sin kod.
+                </p>
+
+
+                <p>
+                    Jag hade däremot inte sagt att badges som man ser på scrutinizer spelar så stor roll eftersom man får ju inte så mycket detaljer av varför något är bra eller dåligt, badges ger bara en bra översikt av hur koden är men man får ju såklart inga detaljer så det kan vara en bra indikator om ens kod men inget mer än de.
+                </p>
+
+
+                <p>
+                    Jag skulle säga att mit TIL för det kmom var hur mycket man kan och nästan ska dela upp ens klasser och metoder, tänkte att jag hade gjort det ganska bra innan jag började med uppgiften men mina scores vare sig det var CC, MI eller betyg var inte tillräckligt bra, samt hur viktigt kommentarer kan vara för att öka ens scores.
+                </p>
+
+
             </article>
         </main>
     </div>

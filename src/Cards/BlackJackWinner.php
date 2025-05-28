@@ -2,9 +2,16 @@
 
 namespace App\Cards;
 
+/**
+ * Class BlackJackWinner.
+ *
+ * Here we determine who wins our game of BlackJack.
+ */
 class BlackJackWinner
 {
     /**
+     * method gameOver
+     *
      * Here is where we check the state of our game and see which player won.
      * @return string */
     public function gameOver(int $dealerScore, int $playerScore): string
@@ -33,6 +40,8 @@ class BlackJackWinner
     }
 
     /**
+     * method BlackJackWinner
+     *
      * @param int $dealerScore
      * @param int $playerScore
      * @return string This is for if the dealer has stopped drawing, we check
@@ -52,6 +61,9 @@ class BlackJackWinner
     }
 
     /**
+     * method hasBlackJack
+     *
+     * Check if someone got BlackJack.
      * @return bool Return True if the score is 21 and gives blackjack.
      */
     private function hasBlackJack(int $score): bool
@@ -60,6 +72,9 @@ class BlackJackWinner
     }
 
     /**
+     * method hasBust
+     *
+     * Check if someones hand bust.
      * @return bool Return True if someones score is over 21, their hand bust.
      */
     private function hasBust(int $score): bool

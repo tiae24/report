@@ -63,57 +63,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\BlackJackHand",
             "name": "BlackJackHand",
-            "summary": "",
+            "summary": "Class\u0020BlackJackHand.",
             "url": "classes/App-Cards-BlackJackHand.html"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "",
+            "summary": "getScore",
             "url": "classes/App-Cards-BlackJackHand.html#method_getScore"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AextractCardValue\u0028\u0029",
             "name": "extractCardValue",
-            "summary": "",
+            "summary": "extractCardValue",
             "url": "classes/App-Cards-BlackJackHand.html#method_extractCardValue"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AisRoyal\u0028\u0029",
             "name": "isRoyal",
-            "summary": "",
+            "summary": "isRoyal",
             "url": "classes/App-Cards-BlackJackHand.html#method_isRoyal"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner",
             "name": "BlackJackWinner",
-            "summary": "",
+            "summary": "Class\u0020BlackJackWinner.",
             "url": "classes/App-Cards-BlackJackWinner.html"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AgameOver\u0028\u0029",
             "name": "gameOver",
-            "summary": "Here\u0020is\u0020where\u0020we\u0020check\u0020the\u0020state\u0020of\u0020our\u0020game\u0020and\u0020see\u0020which\u0020player\u0020won.",
+            "summary": "method\u0020gameOver",
             "url": "classes/App-Cards-BlackJackWinner.html#method_gameOver"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003ABlackJackWinner\u0028\u0029",
             "name": "BlackJackWinner",
-            "summary": "",
+            "summary": "method\u0020BlackJackWinner",
             "url": "classes/App-Cards-BlackJackWinner.html#method_BlackJackWinner"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AhasBlackJack\u0028\u0029",
             "name": "hasBlackJack",
-            "summary": "",
+            "summary": "method\u0020hasBlackJack",
             "url": "classes/App-Cards-BlackJackWinner.html#method_hasBlackJack"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AhasBust\u0028\u0029",
             "name": "hasBust",
-            "summary": "",
+            "summary": "method\u0020hasBust",
             "url": "classes/App-Cards-BlackJackWinner.html#method_hasBust"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "",
+            "summary": "Class\u0020CardGraphic.",
             "url": "classes/App-Cards-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor",
             "url": "classes/App-Cards-CardGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
@@ -128,27 +128,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Cards",
             "name": "Cards",
-            "summary": "",
+            "summary": "Class\u0020Cards.",
             "url": "classes/App-Cards-Cards.html"
         },                {
             "fqsen": "\\App\\Cards\\Cards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "method\u0020Construct",
             "url": "classes/App-Cards-Cards.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\Cards\u003A\u003AgetSuit\u0028\u0029",
             "name": "getSuit",
-            "summary": "",
+            "summary": "method\u0020getSuit",
             "url": "classes/App-Cards-Cards.html#method_getSuit"
         },                {
             "fqsen": "\\App\\Cards\\Cards\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "method\u0020getvalue",
             "url": "classes/App-Cards-Cards.html#method_getValue"
         },                {
             "fqsen": "\\App\\Cards\\Cards\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "method\u0020getAsString",
             "url": "classes/App-Cards-Cards.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Cards\\Cards\u003A\u003A\u0024value",
@@ -163,47 +163,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "Class\u0020DeckOfCards.",
             "url": "classes/App-Cards-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.",
             "url": "classes/App-Cards-DeckOfCards.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "method\u0020getCards",
             "url": "classes/App-Cards-DeckOfCards.html#method_getCards"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "method\u0020getString",
             "url": "classes/App-Cards-DeckOfCards.html#method_getString"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AgetCard\u0028\u0029",
             "name": "getCard",
-            "summary": "",
+            "summary": "method\u0020getCard",
             "url": "classes/App-Cards-DeckOfCards.html#method_getCard"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AgetSuit\u0028\u0029",
             "name": "getSuit",
-            "summary": "",
+            "summary": "method\u0020getSuit",
             "url": "classes/App-Cards-DeckOfCards.html#method_getSuit"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AtotalCards\u0028\u0029",
             "name": "totalCards",
-            "summary": "",
+            "summary": "method\u0020totalCards",
             "url": "classes/App-Cards-DeckOfCards.html#method_totalCards"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "method\u0020drawCard",
             "url": "classes/App-Cards-DeckOfCards.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "method\u0020shuffle",
             "url": "classes/App-Cards-DeckOfCards.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A\u0024cards",

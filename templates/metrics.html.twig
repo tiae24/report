@@ -4,9 +4,6 @@
 
 {% block body %}
     <main class="main">
-        <h1>Main</h1>
-        <h3>Timothy</h3>
-        <p> Jag är Timothy, jag gillar att spela och går i skolan där jag lär mig att programmera, just nu går jag i kurserna webapp och mvc.</p>
 
         <h1>
             Introduktion
@@ -290,6 +287,21 @@
 
         <img src="{{ asset('img/scruCoverage.PNG') }}" width="100%">
 
+        <diV style="padding-bottom: 50px;">
+            <img src="https://scrutinizer-ci.com/g/tiae24/report/badges/quality-score.png?b=main" width="12%">
+            <img src="https://scrutinizer-ci.com/g/tiae24/report/badges/coverage.png?b=main" width="12%">
+            <img src="https://scrutinizer-ci.com/g/tiae24/report/badges/build.png?b=main" width="10%">
+
+            <p>
+                Glömde lägga in dem innan jag förbättrade men antar att dem updateras automatiskt ändå, men min coverage är så låg eftersom det är controllerserna 
+                som drar ner den men jag kunde inte köra controller testerna i scrutinizer, dem funkade lokalt men inte när jag körde på scrutinizer det står lite mer 
+                om detta vid förbättringar.
+            </p>
+        </div>
+
+
+
+
         <h2>
             Förbättringar
         </h2>
@@ -304,21 +316,109 @@
         <h3>
             Förbättringen
         </h3>
-        <img src="{{ asset('img/Complexity.PNG') }}" width="100%">
-        <img src="{{ asset('img/MI.PNG') }} " width="100%">
 
-        <ul>
-            <li>BlackJack: - Från -> 19CC, 69MI,  Till -> 4CC,  85 MI</li>
-            <li>BlackJackHand 75 MI</li>
-            <li>BlackJackWinner 80MI</li>
-            <li>DeckOfCards 74 MI</li>
-            <li>Dice 60MI till 99.9MI</li>
-        </ul>
+        <h3>
+            Nya klasserna
+        </h3>
+        <img src="{{ asset('img/SplitClass.PNG') }}" width="60%">
+
+        <h3>
+            Innan
+        </h3>
+
+        <img src="{{ asset('img/Complexity.PNG') }}" width="100%">
+
+
+        <h3>
+            Efter
+        </h3>
+        <img src="{{ asset('img/MI2.PNG') }} " width="100%">
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Before (CC)</th>
+                    <th>Before (MI)</th>
+                    <th>After (CC)</th>
+                    <th>After (MI)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>BlackJack</strong></td>
+                    <td>19</td>
+                    <td>69</td>
+                    <td>4</td>
+                    <td>85.5</td>
+                </tr>
+                <tr>
+                    <td><strong>BlackJackHand</strong></td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>8</td>
+                    <td>89</td>
+                </tr>
+                <tr>
+                    <td><strong>BlackJackWinner</strong></td>
+                    <td>–</td>
+                    <td>–</td>
+                    <td>9</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td><strong>DeckOfCards</strong></td>
+                    <td>7</td>
+                    <td>73.6</td>
+                    <td>7</td>
+                    <td>84.3</td>
+                </tr>
+                <tr>
+                    <td><strong>Dice</strong></td>
+                    <td>1</td>
+                    <td>60</td>
+                    <td>1</td>
+                    <td>99.9</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h3>
+            Vad jag gjorde
+        </h3>
+
+        <p>
+            Det jag gjorde var att dela upp klassen blackjack till 3 olika klasser, blackjack som var nästan samma som innan men som använde sig utav metoder 
+            från dem 2 nya klasserna, blackjackhand som tog hand och gav ett score till en hand som man skickade i och blackjackwinner som checkade vem det var som 
+            vann blackjack matchen, koden var ju nästan identiskt bara att nu hade dem en egen klass som blackjack använde sig utav.
+        </p>
 
         <p>
             Sedan så fixade jag även några av dem mindre från under 65 MI till över 85 MI.
         </p>
 
+        <p>
+            När jag skrev klart så fick jag 2 nya klasser med flera metoder i dem, alla fick en MainTainability Index över 85 och en Cyclomatic Complexity under 10
+            Min BlackJack klass AC score ökades ju såklart inte men EC gick upp från 1 till 3
+        </p>
+
+        <h3>
+            Innan
+        </h3>
+
+        <img src="{{ asset('img/CouplingScoreInnan.png') }}" width="100%">
+
+
+        <h3>
+            Efter
+        </h3>
+        <img src="{{ asset('img/CouplingScore.PNG') }} " width="100%">
+
+
+        <h2>
+            Issues
+        </h2>
 
         <p>
             Den andra saken jag har tänkt förbättra är issuesen jag har fått i Scrutinizer, jag har 4 major, 2 är inte från min kod så det blir svårt att förbättra 
@@ -328,11 +428,60 @@
             efter typ ett år och kollar på koden. Så om jag fixar dem här issues så kan Maintainability Index öka och issues kommer ju såklart försvinna / minska.
         </p>
 
+        <h2>
+            Innan Förbättrningen
+        </h2>
+            <img src="{{ asset('img/issues.PNG') }}" width="30%">
+
+        <h2>
+            Efter Förbättrningen
+        </h2>
+
+        <img src="{{ asset('img/fixedissues.PNG') }}" width="30%">
+
+        <h2>
+            Vad jag fixade för någonting
+        </h2>
+
+        <p>
+            Det som jag fixade var att ta bort två onödiga returns som inte användes eftersom dem redan var under return $this->render('game/game.html.twig', $data);
+            dem andra 2 major issuesen är från filen <b><i>tools/php-cs-fixer/.php-cs-fixer.dist.php</i></b> vilket såklart inte är min kod.
+        </p>
+
+        <img src="{{ asset('img/scruIssues.PNG') }}" width="80%">
+
+        <p>
+            Dem andra saker var bara massa kommentarer som behövde fixas, jag hade redan kommentarer i koden men dem gav issues eftersom det var ett mellanrum
+            i slutet av kommentaren för innehållet i en array array<string > och så lade jag array namnen i quotes. Så jag fixade ungefär 20 sånna, och för varje sak jag fixade så gick ju issuesen ner 
+            1 eftersom det är inte är någon formel som ger oss ett värde för issues utan det är bara 1 issues = 1 problem.
+        </p>
+
+        <ul>
+            <li>Gammla * @return array int, array{ suit: string, card: string, graphic: string } </li>
+            <li>Nya    * @return array int, array{'suit': string, 'card': string, 'graphic': string} </li>
+        </ul>
+
+        <img src="{{ asset('img/minorissue.PNG') }}" width="70%">
+
+
+        <h2>
+            KodTäckning
+        </h2>
 
         <p>
             Jag tänker även fixa så att jag har kodtäcking på minst 50% totalt, så då måste jag fixa tester till mina controllers eftersom jag redan har 100% på 
-            alla mina Klasser, 
+            alla mina Klasser. Då måste jag skapa WebTestCase tester för mina controllers, jag tänker inte göra några för komplicerade tester men vill 
+            bara ha några tester som checkar att självaste sidan fungerar.
         </p>
+
+        <p>
+            Jag vill ju såklart öka kodtäckningen för att göra koden mer "säker", med testerna kan jag nu fånga om något går fel, öka kvaliten på koden och öka andra betyg 
+            som t.ex CRAP score, MainTainability Index och såklart min coverage. Det är helt enkelt en bra "bas" som hjälper många delar av ens kod.
+        </p>
+
+        <h2>
+            Innan Förbättrningen
+        </h2>
 
         <img src="{{ asset('img/ControllerTest.PNG') }}" width="100%">
 
@@ -352,10 +501,186 @@
 
         <img src="{{ asset('img/Coverage3.PNG') }}" width="100%">
 
+
+        <h3>
+            Vad jag gjorde
+        </h3>
+
+        <p>
+            Det jag gjorde var att lägga till tester som täckte alla andra delar av min kod som inte var klasser eftersom dem hade jag redan 100% coverage på, 
+            det var väldigt simpla tester som bara kollade ifall sidorna funkade för mina controllers, sen fixade jag även så dice klassen hade tester även ifall 
+            det inte riktigt var en del av min kod så tyckte jag att det skadar inte att öka dens coverage också, detta ökade ju såklart min coverage som ni ser 
+            ovan.
+        </p>
+
+        <h3>
+            Problem
+        </h3>
+
+        <p>
+            Eftersom det var controllerna som jag fixade coverage för så funkade det inte att "köra" dem i scrutinizer, det funkade när jag körde phpunit localt men 
+            inte när dem kördes i scrutinizer, så tog bort koden och lade koden i txt filer, sökte på discorden om det fanns något sätt och fixa men det stod 
+            att det var överkurs att fixa det och hittade inget när jag googlade häller eller kollade på  
+            <a href="https://github.com/dbwebb-se/mvc/issues/39">
+                github
+            </a>
+        </p>
+
         
 
         <p>
             https://scrutinizer-ci.com/g/tiae24/report/badges/coverage.png?b=main
+        </p>
+
+
+        <h2>
+            Scrutinizer Score
+        </h2>
+
+        <p>
+            Den sista saken jag ville fixa var att få Scrutinizer värdet till 10, jag har bara 2 saker som måste fixas för det, gameOver och getScore metoden har
+            fått betyget B. Jag väljer att göra det här för att jag vill ändå fixa båda dem 2 metoderna eftersom jag vill höja MainTainability indexen och 
+            sänka Cyclomatic Complexity.
+        </p>
+
+        <p>
+            För att höja metodernas betyg så behöver jag nog dela upp dem i flera mindre metoderna och ha t.ex getScore kalla dem, eftersom just nu har jag 
+            9 och 8 conditions i metoderna. Metoderna har ju fortfarande bra betyg så det är inte direkt att dem är dåligt skrivna och skapar problem men jag vill 
+            fixa dem för att bara fin slippa koden och göra så att en metoden inte gör för mycket olika saker och har för många if satser.
+        </p>
+
+        <h3>
+            Vad jag gjorde
+        </h3>
+
+        <p>
+            Det jag gjorde var ju såklart som jag nämde att jag delade upp metoderna jag skulle fixa i mindre metoder, så det var som en förlängning på 
+            det jag gjorde när jag delade upp klasserna, nu tog jag det steget längre och delade upp metoderna i mindre metoder som jobbade med varandre, 
+            detta ledda ju såklart till att betyg på meotderna gick från B - >  A och att min score gick upp till 10.
+        </p>
+
+        <h3>
+           Betyg Innan
+        </h3>
+
+        <img src="{{ asset('img/scrutinizer.PNG') }}" width="25%">
+
+
+        <h3>
+            Betyg Efter
+        </h3>
+
+        <img src="{{ asset('img/scruScore2.PNG') }}" width="25%">
+
+
+
+        <h3>
+            getScore Betyg Innan
+        </h3>
+
+        <img src="{{ asset('img/HandGrade.PNG') }}" width="100%">
+
+
+        <h3>
+            getScore Betyg Efter
+        </h3>
+
+        <img src="{{ asset('img/HandGrade2.PNG') }}" width="100%">
+
+
+        <h3>
+            gameOver Betyg Innan
+        </h3>
+
+        <img src="{{ asset('img/WinnerCode.PNG') }}" width="100%">
+
+
+        <h3>
+            gameOver Betyg Efter
+        </h3>
+
+        <img src="{{ asset('img/WinnerGrade2.PNG') }}" width="100%">
+
+
+        <h3>
+            gameOver Kod Innan
+        </h3>
+
+        <img src="{{ asset('img/WinnerBefore.PNG') }}" width="100%">
+
+        <h3>
+            gameOver Kod Efter
+        </h3>
+        <img src="{{ asset('img/WinnerCode1.PNG') }}" width="100%">
+        <img src="{{ asset('img/WinnerCode2.PNG') }}" width="100%">
+        
+
+
+
+        <h3>
+            getScore Kod Innan
+        </h3>
+
+        <img src="{{ asset('img/ScoreBefore.PNG') }}" width="100%">
+
+        <h3>
+            getScore Kod Efter
+        </h3>
+
+        <img src="{{ asset('img/ScoreCode.PNG') }}" width="100%">
+        <img src="{{ asset('img/ScoreCode2.PNG') }}" width="100%">
+
+
+
+
+        <h3>
+            Sämst Betyg Innan
+        </h3>
+
+        <img src="{{ asset('img/ScruRatings.PNG') }}" width="50%">
+
+
+        <h3>
+            Sämst Betyg Efter
+        </h3>
+
+        <img src="{{ asset('img/ScruRatings2.PNG') }}" width="50%">
+
+
+        <h2>
+            Diskussion
+        </h2>
+
+        <p>
+            Man kan ju såklart tänka på clean code och jobba med det i å tanke, det är ju för en mesta del bara att tänka på hur du skriver din kod och 
+            hur man delar upp den, använder sig utav kommentarer och annat. Det lättaste man kan göra att att tänka på sin code style eftersom då 
+            behöver man ju inte tänka på det tekniska i sin kod bara hur man skriver det, det är även bra att tänka code style eftersom tillslut så skriver man det 
+            korrekt automatiskt, man vill få det i muskel minnet. Det enklaste är ju även att jobba med phpmetrics och phpdocs i åtanke eftersom det går väldigt 
+            fort att kolla vad man får vär mättal och betyg på sin kod, medans scrutinizer skulle kunna va någon gång ibland.
+        </p>
+
+        <p>
+            En nackdel med code style är ju däremot att det kan ta väldigt lång tid att få allting att bli bra, som sagt så borde man ju ändå tänka på det lite 
+            så man inte måste jobba med det i flera timmar efter man har skrivit sin kod, jag skulle säga att code style är nästan bara sunt förnuft.
+            Det som kan ta lång tid är ju att fixa testerna för kodtäckning och som kollar om man får några buggar och att allt funkar rätt eftersom det har ju 
+            inget med den koden du skriver att göra, det är sin egna lilla del vilket leder till att det kan ta en del tid eftersom du inte kan tänka på det när du 
+            skriver t.ex dina klasser.
+        </p>
+
+
+        <p>
+            Något bra med code styles är ju att ens kod blir mer läsbar och lättare att förså eftersom man har kommentarer, koden är uppdelad bättre med identeringar
+            och kanske fler klasser och metoder som jobbar med varandra istället för bara en stor klass som gör allting.
+            Koden körs ju även bättre desto högre score man har i t.ex scrutinizer och phpmetrics, så om man tänker och kollar på det kan man se kanske vad man inte 
+            ska göra i sin kodeftersom det ger en dålig scores, eller t.ex vilka fel man har missat (issues) i scrutinizer, vilken kod som inte är täckt med tester 
+            i phpmetrics.
+        </p>
+
+        <p>
+            Detta är ju även något man kan tänka och jobba med mera, kanske inte med just scrutinizer och phpmetrics men saker man kan tänka på och fortfarande 
+            stämmer i andra språk, som hur man kommenterar sin kod, hur man delar up metoder, hur man ska tänka på hur tester funkar och varför dem är bra och hur 
+            man ska tänka på att koden blir rätt direkt när man skriver den och får det i muskel minnet direkt så det underlättar för en själv och någon som ska 
+            kolla på ens kod.
         </p>
 
 

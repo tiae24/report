@@ -30,7 +30,6 @@ class DiceTest extends TestCase
 
         $value = $die->roll();
 
-        $res = $die->getAsString();
         $this->assertNotEmpty($value);
     }
 }

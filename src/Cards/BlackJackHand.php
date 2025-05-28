@@ -2,9 +2,18 @@
 
 namespace App\Cards;
 
+/**
+ * Class BlackJackHand.
+ *
+ * here we work and score our hand for our BlackJack game.
+ */
 class BlackJackHand
 {
     /**
+     * getScore
+     *
+     * Here we get a score for our hand, if a card is an Ace or Face cards we give them values.
+     *
      * @param array<int, array{'card': string, 'graphic': string}> $hand
      * @return int $acutalscore, we return the score we get for an array (hand).
      */
@@ -28,6 +37,11 @@ class BlackJackHand
     }
 
     /**
+     * extractCardValue
+     *
+     * Here we take the string for the card and return it,
+     * so if we have a king we return K.
+     *
      * @param array< string, string> $card
      * @return string
      */
@@ -39,6 +53,10 @@ class BlackJackHand
     }
 
     /**
+     * isRoyal
+     *
+     * Here we give values based on face cards.
+     *
      * @param string $score
      */
     private function isRoyal(string $score)

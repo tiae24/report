@@ -4,6 +4,11 @@ namespace App\Cards;
 
 use App\Cards\Cards;
 
+/**
+ * Class CardGraphic.
+ *
+ * Here we give our cards their "faces", we basically style them for our site.
+ */
 class CardGraphic extends Cards
 {
     /**
@@ -34,6 +39,9 @@ class CardGraphic extends Cards
     ];
 
 
+    /**
+     * Constructor
+     */
     public function __construct(string $values, string $suits)
     {
         parent::__construct($values, $suits);

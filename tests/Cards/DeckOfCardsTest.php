@@ -110,7 +110,7 @@ class DeckOfCardsTest extends TestCase
 
         $newDeck = clone $deck;
 
-        $shuffle = $newDeck->shuffle();
+        $newDeck->shuffle();
 
         $res = $deck->getCards();
         $resShuffled = $newDeck->getCards();
