@@ -4,18 +4,25 @@ namespace App\Cards;
 
 class BlackJackWinner
 {
-
     /**
      * Here is where we check the state of our game and see which player won.
      * @return string */
     public function gameOver(int $dealerScore, int $playerScore): string
     {
 
-        if ($this->hasBlackJack($dealerScore)) return 'Dealer won';
-        if ($this->hasBlackJack($playerScore)) return 'Player won';
+        if ($this->hasBlackJack($dealerScore)) {
+            return 'Dealer won';
+        }
+        if ($this->hasBlackJack($playerScore)) {
+            return 'Player won';
+        }
 
-        if ($this->hasBust($dealerScore)) return 'Player won';
-        if ($this->hasBust($playerScore)) return 'Dealer won';
+        if ($this->hasBust($dealerScore)) {
+            return 'Player won';
+        }
+        if ($this->hasBust($playerScore)) {
+            return 'Dealer won';
+        }
 
 
         if ($dealerScore >= 17) {
@@ -26,7 +33,7 @@ class BlackJackWinner
     }
 
     /**
-     * @return string This is for if the dealer has stopped drawing, we check 
+     * @return string This is for if the dealer has stopped drawing, we check
      * who has the higher score.
      */
     private function BlackJackWinner(int $playerScore, $dealerScore): string

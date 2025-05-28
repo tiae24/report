@@ -8,7 +8,7 @@ use App\Cards\BlackJackWinner;
 
 /**
  * Class BlackJack.
- * 
+ *
  * Here is everything for the game, from drawing a card, to scoring a hand.
  */
 class BlackJack
@@ -22,8 +22,8 @@ class BlackJack
     /** @var BlackJackWinner */
     protected $winner;
 
-    /** 
-     * @var array<int, array{ suit: string, card: string, graphic: string }> 
+    /**
+     * @var array<int, array{ suit: string, card: string, graphic: string }>
     */
     protected $playerHand = [];
 
@@ -33,7 +33,7 @@ class BlackJack
 
     /**
      * Constructor.
-     * 
+     *
      * Here we get out Deck, and Classes that we use to get scores and winners.
      * @return void
      */

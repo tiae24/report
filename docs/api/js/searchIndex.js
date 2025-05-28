@@ -3,12 +3,12 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Cards\\BlackJack",
             "name": "BlackJack",
-            "summary": "",
+            "summary": "Class\u0020BlackJack.",
             "url": "classes/App-Cards-BlackJack.html"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Here\u0020we\u0020get\u0020out\u0020Deck,\u0020and\u0020Classes\u0020that\u0020we\u0020use\u0020to\u0020get\u0020scores\u0020and\u0020winners.",
+            "summary": "Constructor.",
             "url": "classes/App-Cards-BlackJack.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetScore\u0028\u0029",
@@ -80,6 +80,11 @@ Search.appendIndex(
             "name": "gameOver",
             "summary": "Here\u0020is\u0020where\u0020we\u0020check\u0020the\u0020state\u0020of\u0020our\u0020game\u0020and\u0020see\u0020which\u0020player\u0020won.",
             "url": "classes/App-Cards-BlackJackWinner.html#method_gameOver"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003ABlackJackWinner\u0028\u0029",
+            "name": "BlackJackWinner",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackWinner.html#method_BlackJackWinner"
         },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner\u003A\u003AhasBlackJack\u0028\u0029",
             "name": "hasBlackJack",
@@ -243,57 +248,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "",
+            "summary": "Route\u0020that\u0020shows\u0020all\u0020our\u0020other\u0020Routes\u0020for\u0020this\u0020Kmom.",
             "url": "classes/App-Controller-BookController.html#method_index"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003Alibrary\u0028\u0029",
             "name": "library",
-            "summary": "",
+            "summary": "Route\u0020that\u0020shows\u0020all\u0020our\u0020other\u0020Routes\u0020for\u0020this\u0020Kmom.",
             "url": "classes/App-Controller-BookController.html#method_library"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AcreatingBook\u0028\u0029",
             "name": "creatingBook",
-            "summary": "",
+            "summary": "Route\u0020where\u0020we\u0020show\u0020a\u0020form\u0020where\u0020we\u0020can\u0020create\u0020a\u0020new\u0020book.",
             "url": "classes/App-Controller-BookController.html#method_creatingBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AcreateBook\u0028\u0029",
             "name": "createBook",
-            "summary": "",
+            "summary": "Route\u0020that\u0020takes\u0020the\u0020data\u0020from\u0020our\u0020form\u0020and\u0020makes\u0020a\u0020book\u0020out\u0020of\u0020it.",
             "url": "classes/App-Controller-BookController.html#method_createBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AshowAllProduct\u0028\u0029",
             "name": "showAllProduct",
-            "summary": "",
+            "summary": "Route\u0020that\u0020shows\u0020all\u0020our\u0020books\u0020in\u0020JSON.",
             "url": "classes/App-Controller-BookController.html#method_showAllProduct"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AshowBookByISBN\u0028\u0029",
             "name": "showBookByISBN",
-            "summary": "",
+            "summary": "Route\u0020that\u0020shows\u0020a\u0020book\u0020based\u0020on\u0020its\u0020isbn.",
             "url": "classes/App-Controller-BookController.html#method_showBookByISBN"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AdeleteProductById\u0028\u0029",
             "name": "deleteProductById",
-            "summary": "",
+            "summary": "Route\u0020where\u0020we\u0020can\u0020delete\u0020a\u0020book\u0020based\u0020on\u0020its\u0020id.",
             "url": "classes/App-Controller-BookController.html#method_deleteProductById"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AviewAllBooks\u0028\u0029",
             "name": "viewAllBooks",
-            "summary": "",
+            "summary": "Our\u0020\u0022main\u0022\u0020route\u0020where\u0020we\u0020get\u0020a\u0020table\u0020with\u0020all\u0020books.",
             "url": "classes/App-Controller-BookController.html#method_viewAllBooks"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AviewOneBook\u0028\u0029",
             "name": "viewOneBook",
-            "summary": "",
+            "summary": "Route\u0020that\u0020shows\u0020a\u0020certain\u0020book\u0020based\u0020on\u0020its\u0020isbn.",
             "url": "classes/App-Controller-BookController.html#method_viewOneBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AupdateOneBook\u0028\u0029",
             "name": "updateOneBook",
-            "summary": "",
+            "summary": "Route\u0020where\u0020can\u0020update\u0020a\u0020book\u0020based\u0020on\u0020its\u0020id.",
             "url": "classes/App-Controller-BookController.html#method_updateOneBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AupdateBook\u0028\u0029",
             "name": "updateBook",
-            "summary": "",
+            "summary": "Where\u0020we\u0020take\u0020the\u0020updated\u0020data\u0020from\u0020the\u0020form\u0020and\u0020update\u0020it.",
             "url": "classes/App-Controller-BookController.html#method_updateBook"
         },                {
             "fqsen": "\\App\\Controller\\CardsController",
@@ -381,16 +386,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LuckyController.html#method_jsonNumber"
         },                {
-            "fqsen": "\\App\\Controller\\LuckyControllerJson",
-            "name": "LuckyControllerJson",
-            "summary": "",
-            "url": "classes/App-Controller-LuckyControllerJson.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LuckyControllerJson\u003A\u003AjsonNumber\u0028\u0029",
-            "name": "jsonNumber",
-            "summary": "",
-            "url": "classes/App-Controller-LuckyControllerJson.html#method_jsonNumber"
-        },                {
             "fqsen": "\\App\\Controller\\LuckyControllerTwig",
             "name": "LuckyControllerTwig",
             "summary": "",
@@ -458,7 +453,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Where\u0020we\u0020make\u0020a\u0020dice.",
             "url": "classes/App-Dice-Dice.html#method___construct"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003Aroll\u0028\u0029",
@@ -468,7 +463,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Get\u0020the\u0020String\u0020of\u0020a\u0020dice.",
             "url": "classes/App-Dice-Dice.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A\u0024value",

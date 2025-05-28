@@ -1,6 +1,7 @@
 <?php
 
 // tests/Controller/ProfileControllerTest.php
+
 namespace App\Tests\Controller;
 
 use App\Repository\UserRepository;

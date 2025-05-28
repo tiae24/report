@@ -1,10 +1,10 @@
 <?php
 
 // tests/Controller/ProfileControllerTest.php
+
 namespace App\Tests\Controller;
 
 use App\Cards\BlackJack;
-
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

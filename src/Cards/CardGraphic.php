@@ -6,7 +6,6 @@ use App\Cards\Cards;
 
 class CardGraphic extends Cards
 {
-
     /**
      * This is where we will get a card "image" based on the suit and value.
      * We have 4 suits and then cards from Ace to King.

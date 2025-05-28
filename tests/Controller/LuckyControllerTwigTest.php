@@ -1,6 +1,7 @@
 <?php
 
 // tests/Controller/ProfileControllerTest.php
+
 namespace App\Tests\Controller;
 
 use App\Repository\UserRepository;
@@ -48,7 +49,7 @@ class LuckyControllerTwigTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-        public function testMain(): void
+    public function testMain(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser
@@ -61,7 +62,7 @@ class LuckyControllerTwigTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-        public function testReport(): void
+    public function testReport(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser

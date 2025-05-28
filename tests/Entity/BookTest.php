@@ -37,7 +37,7 @@ class BookTest extends TestCase
     }
 
 
-        public function testSetImage()
+    public function testSetImage()
     {
         $book = new Book();
         $this->assertInstanceOf("\App\Entity\Book", $book);
@@ -49,7 +49,7 @@ class BookTest extends TestCase
     }
 
 
-        public function testSetWriter()
+    public function testSetWriter()
     {
         $book = new Book();
         $this->assertInstanceOf("\App\Entity\Book", $book);
