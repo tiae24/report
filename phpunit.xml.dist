@@ -19,11 +19,14 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
+            <exclude>
+                <directory>App\Tests\Controller</directory>
+            </exclude>
             <directory>tests</directory>
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="false">
+    <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">src</directory>
         </include>
