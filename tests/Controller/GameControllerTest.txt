@@ -4,52 +4,52 @@
 
 namespace App\Tests\Controller;
 
+use App\Cards\BlackJack;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ApiControllerTest extends WebTestCase
+class GameControllerTest extends WebTestCase
 {
-    public function testApiDeck(): void
+    public function testGameSession(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser
         $client = static::createClient();
 
         // Request a specific page
-        $crawler = $client->request('GET', '/api/deck');
+        $crawler = $client->request('GET', '/game/session');
 
         // Validate a successful response and some content
         $this->assertResponseIsSuccessful();
     }
 
-
-    public function testShowAllProduct(): void
+    public function testStartGame(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser
         $client = static::createClient();
 
         // Request a specific page
-        $crawler = $client->request('GET', 'api/library/books');
+        $crawler = $client->request('GET', '/game');
 
         // Validate a successful response and some content
         $this->assertResponseIsSuccessful();
     }
 
 
-    public function testShowBookByISBN(): void
+
+
+    public function testGameDoc(): void
     {
         // This calls KernelTestCase::bootKernel(), and creates a
         // "client" that is acting as the browser
         $client = static::createClient();
 
         // Request a specific page
-        $crawler = $client->request('GET', 'api/library/book/9780795300622');
+        $crawler = $client->request('GET', '/game/doc');
 
         // Validate a successful response and some content
         $this->assertResponseIsSuccessful();
     }
-
-
 
 }
