@@ -33,6 +33,8 @@ class BlackJackWinner
     }
 
     /**
+     * @param int $dealerScore
+     * @param int $playerScore
      * @return string This is for if the dealer has stopped drawing, we check
      * who has the higher score.
      */
@@ -44,6 +46,8 @@ class BlackJackWinner
             return 'Dealer won';
         } elseif ($dealerScore == $playerScore) {
             return 'Dealer won';
+        } else {
+            return 'No Score';
         }
     }
 

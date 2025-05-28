@@ -5,7 +5,7 @@ namespace App\Cards;
 class BlackJackHand
 {
     /**
-     * @param array<int, array{ card: string, graphic: string }> $hand
+     * @param array<int, array{ 'card': string, 'graphic': string }> $hand
      * @return int $acutalscore, we return the score we get for an array (hand).
      */
     public function getScore(array $hand): int
