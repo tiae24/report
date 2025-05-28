@@ -95,11 +95,9 @@ class ApiController extends AbstractController
         $drawn = $deck -> drawCard((int) $number);
 
 
-        $data = [
-            'suit' => $drawn[0]
-        ];
 
         $data = [
+            'suit' => $drawn[0],
             'cards' => $drawn,
             'total' => $deck -> totalCards()
         ];

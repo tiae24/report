@@ -62,7 +62,6 @@ class CardsController extends AbstractController
 
     #[Route("/card", name: "card")]
     public function card(
-        SessionInterface $session
     ): Response {
         $routes = [
             [
@@ -114,7 +113,6 @@ class CardsController extends AbstractController
     public function deck(
         SessionInterface $session
     ): Response {
-        $number = new Cards("2", "Heart");
 
         /** @var DeckOfCards $deck */
         $deck = $session->get("deck");
@@ -177,12 +175,8 @@ class CardsController extends AbstractController
 
         $drawn = $deck -> drawCard((int) $number);
 
-
         $data = [
-            'suit' => $drawn[0]
-        ];
-
-        $data = [
+            'suit' => $drawn[0],
             'cards' => $drawn,
             'total' => $deck -> totalCards()
         ];

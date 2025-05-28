@@ -71,6 +71,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Cards-BlackJackHand.html#method_getScore"
         },                {
+            "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AextractCardValue\u0028\u0029",
+            "name": "extractCardValue",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackHand.html#method_extractCardValue"
+        },                {
+            "fqsen": "\\App\\Cards\\BlackJackHand\u003A\u003AisRoyal\u0028\u0029",
+            "name": "isRoyal",
+            "summary": "",
+            "url": "classes/App-Cards-BlackJackHand.html#method_isRoyal"
+        },                {
             "fqsen": "\\App\\Cards\\BlackJackWinner",
             "name": "BlackJackWinner",
             "summary": "",

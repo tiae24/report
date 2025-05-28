@@ -47,7 +47,7 @@ class BlackJack
     /**
      * Here is where we get score for the players and dealers hand
      * With an ace and the face cards we give them a numerical value instead.
-     * @param array<int, array{ 'card': string, 'graphic': string }> $hand
+     * @param array<int, array{'card': string, 'graphic': string}> $hand
      * @return int $score. Which is the score for a hand.
      */
     public function getScore(array $hand): int

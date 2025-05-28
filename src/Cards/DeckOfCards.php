@@ -28,7 +28,7 @@ class DeckOfCards
     }
 
     /**
-     * @return array<int, array{ card: string, graphic: string }>
+     * @return array<int, array{'card': string, 'graphic': string}>
      */
     public function getCards(): array
     {
@@ -80,7 +80,7 @@ class DeckOfCards
 
     /**
      * @param int $amount
-     * @return array<int, array{ suit: string, card: string, graphic: string }>
+     * @return array<int, array{'suit': string, 'card': string, 'graphic': string}>
      */
     public function drawCard(int $amount): array
     {
@@ -104,7 +104,7 @@ class DeckOfCards
     }
 
     /**
-     * @return array<int, array{ suit: string, card: string, graphic: string }>
+     * @return array<int, array{'suit': string, 'card': string, 'graphic': string}>
      */
     public function shuffle(): array
     {

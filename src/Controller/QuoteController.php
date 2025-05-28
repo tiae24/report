@@ -12,7 +12,6 @@ class QuoteController extends AbstractController
     #[Route("/api/", name: "api")]
     public function api(): Response
     {
-        $number = random_int(0, 100);
 
         $routes = [
             [
@@ -117,8 +116,6 @@ class QuoteController extends AbstractController
             'quote' => $quotes[$number],
             'date' => $date
         ];
-
-        $selectedQuote = $quotes[$number];
 
         return $this->render('quotes.html.twig', $data);
     }
