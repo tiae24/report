@@ -21,12 +21,9 @@ build:
                     - php-scrutinizer-run
                     #- phpcs-run # Not used, missing config file
     tests:
-        before:
-            - cp .env.scrutinizer .env
-            - php artisan key:generate
         override:
-            -   command: "composer phpunit"
-                # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+            -   #command: "composer phpunit"
+                command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
                 coverage:
                     file: "docs/coverage.clover"
                     format: "php-clover"
