@@ -210,7 +210,7 @@ class ProjectController extends AbstractController
         $username = $form['username'];
 
         /** @var Bank $bank */
-        $bank = new Bank($players, 100000000000);
+        $bank = new Bank($players, (int) 100000000);
 
         $session->set('bank', $bank);
 
