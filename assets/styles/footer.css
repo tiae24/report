@@ -1,0 +1,22 @@
+/** navbar.css */
+
+.project-footer {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    gap: 5rem;
+
+}
+
+
+
+
+
+
+

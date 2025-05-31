@@ -1,0 +1,228 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use App\Project\Cards;
+use App\Project\DeckOfCards;
+use App\Project\CardGraphic;
+use App\Project\BlackJack;
+
+class ProjectController extends AbstractController
+{
+    #[Route("/proj", name: "project")]
+    public function project(): Response
+    {
+
+        return $this->render('project/main.html.twig');
+
+    }
+
+
+    #[Route("/proj/about", name: "project-about")]
+    public function projectAbout(): Response
+    {
+
+        return $this->render('project/main.html.twig');
+
+    }
+
+    #[Route("/proj/session", name: "projSession")]
+    public function projSession(
+    ): Response {
+        /** @var BlackJack $deck */
+        $deck = new BlackJack();
+
+
+        $try = $deck -> playerHand();
+
+        $game = $deck -> gameOver();
+        $deck -> drawCard("dealer");
+
+
+        $data = [
+            'playerHand' => $deck -> playerHand(),
+            'dealerHand' => $deck -> dealerHand(),
+            'playerScore' => $deck -> getScore("player"),
+            'dealerScore' => $deck -> getScore("dealer"),
+            'game' => $game
+        ];
+
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/proj/game', name: "projStart")]
+    public function projStart(
+        SessionInterface $session
+    ): Response {
+
+        /** @var BlackJack */
+        $deck = new BlackJack();
+
+        $session->set('game', $deck);
+
+        $routes = [
+            [
+                'route' => '/game/doc',
+                'metod' => 'GET',
+                'beskrivning' => 'Gör våran kortlek för sessionen, måste göras innan vi börjar',
+                'name' => 'gameDocumentation'
+            ]
+            ];
+
+        $player = $deck -> playerHand();
+
+        $data = [
+            'playerHand' => $deck -> playerHand(),
+            'dealerHand' => $deck -> dealerHand(),
+            'playerScore' => $deck -> getScore("player"),
+            'dealerScore' => $deck -> getScore("dealer"),
+            'route' => $routes
+        ];
+
+        return $this->render('project/start.html.twig', $data);
+    }
+
+
+    #[Route('/proj/play', name: "projGame")]
+    public function projGame(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+        /** @var BlackJack $deck */
+        $deck = $session->get("game");
+        $players = $session->get("players");
+        $stand = $session->get("stand");
+        $dealerTurn = "";
+
+
+        $action = $request->request->get('action');
+
+
+        if ($action === 'stand0') {
+            $stand["stand0"] = "Stop";
+            $session->set('stand', $stand);
+        } elseif ($action === 'stand1') {
+            $stand["stand1"] = "Stop";
+            $session->set('stand', $stand);
+        } elseif ($action === 'stand2') {
+            $stand["stand2"] = "Stop";
+            $session->set('stand', $stand);
+        }
+
+        if ($action === 'draw1') {
+            $deck -> drawCard("player", 1);
+        } elseif ($action === 'draw2') {
+            $deck -> drawCard("player", 2);
+        } elseif ($action === 'draw3') {
+            $deck -> drawCard("player", 3);
+        }
+
+
+
+
+        $game = $deck -> gameOver();
+
+        if ($game[0] === 'Dealer won' || $game[0] === 'Player won') {
+            $stand["stand0"] = "Stop";
+            $session->set('stand', $stand);
+        }
+        if ($game[1] === 'Dealer won' || $game[1] === 'Player won') {
+            $stand["stand1"] = "Stop";
+            $session->set('stand', $stand);
+        }
+        if ($game[2] === 'Dealer won' || $game[2] === 'Player won') {
+            $stand["stand2"] = "Stop";
+            $session->set('stand', $stand);
+        }
+
+        print_r($game[2]);
+        print_r($stand["stand2"]);
+
+        if ($stand["stand0"] == "Stop" && $stand["stand1"] == "Stop" && $stand["stand2"] == "Stop") {
+            $deck -> drawCard("dealer");
+            $dealerTurn = "Start";
+            print_r($dealerTurn);
+        }
+
+        $game = $deck -> gameOver();
+
+
+        $data = [
+            'playerHand' => $deck -> playerHand(),
+            'dealerHand' => $deck -> dealerHand(),
+            'playerScore' => $deck -> getScore("player"),
+            'dealerScore' => $deck -> getScore("dealer"),
+            'game' => $game,
+            'players' => $players,
+            'stand' => $stand,
+            'dealerTurn' => $dealerTurn,
+        ];
+
+        return $this->render('project/game.html.twig', $data);
+
+    }
+
+
+    #[Route('/proj/player', name: 'projPlayers', methods: ['POST'])]
+    public function projPlayers(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+
+        $deck = $session->get("game");
+
+        $players = $_POST['players'];
+
+        $stand = [
+            'stand0' => "Go",
+            'stand1' => "Go",
+            'stand2' => "Go",
+        ];
+
+        $session->set('stand', $stand);
+
+        $session->set('players', $players);
+        $deck -> drawCard("dealer");
+        $deck->setPlayers($players);
+        $deck->setPlayerHands();
+
+        return $this->redirectToRoute('projGame');
+    }
+
+
+
+    #[Route('/proj/card', name: 'projCards', methods: ['POST'])]
+    public function projCards(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+
+        $deck = $session->get("game");
+
+        $game = $deck -> gameOver();
+
+        if ($game[0] === 'Dealer won' || $game[0] === 'Player won') {
+            $stand["stand0"] = "Stop";
+            $session->set('stand', $stand);
+        } elseif ($game[1] === 'Dealer won' || $game[1] === 'Player won') {
+            $stand["stand1"] = "Stop";
+            $session->set('stand', $stand);
+        } elseif ($game[2] === 'Dealer won' || $game[2] === 'Player won') {
+            $stand["stand2"] = "Stop";
+            $session->set('stand', $stand);
+        }
+
+        return $this->redirectToRoute('projGame');
+    }
+}

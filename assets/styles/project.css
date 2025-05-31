@@ -1,0 +1,320 @@
+
+
+@import "footer.css";
+
+
+
+.project-body {
+    background-color: #000814;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card-table {
+    display: flex;
+    flex-wrap: nowrap;
+
+    border-right: 20px solid #7B3F00;
+    border-left: 20px solid #7B3F00;
+    border-bottom: 20px solid #7B3F00;
+
+    background-color: green;
+    gap: 10rem;
+    justify-content: center;
+}
+
+.card-table .Dealer-won{
+    color: red;
+}
+
+.card-table .Player-won{
+    color: lightgreen;
+}
+
+
+.card-table p {
+    color: white;
+}
+
+.player-cards {
+    font-size: 6rem;
+    text-align: center;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.player-cards span {
+    background-color: white;
+}
+
+.card-table-top span {
+    background-color: white;
+}
+
+.hearts {
+    color: red;
+}
+
+.diamonds {
+    color: red;
+}
+
+.player-title {
+    background-color: green;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0;
+    text-align: center;
+    font-size: 4rem;
+    border-right: 20px solid #7B3F00;
+    border-left: 20px solid #7B3F00;
+}
+
+.card-table-top {
+    font-size: 6rem;
+    text-align: center;
+    background-color: green;
+    border-right: 20px solid #7B3F00;
+    border-left: 20px solid #7B3F00;
+    border-top: 20px solid #7B3F00;
+}
+
+.card-table-top p{
+    font-size: 4rem;
+}
+
+
+.play-btn {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10rem;
+    padding: 20px;
+    background-color: #7B3F00;
+}
+
+.play-btn button {
+    background-color: green;
+
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.play-btn button:disabled {
+    background-color: rgb(20, 194, 20);
+
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: not-allowed;
+}
+
+.project-footer {
+    display: flex;
+    flex-direction: row;
+    padding: 3rem;
+    align-items: center;
+    background-color: black;
+    color: white;
+    gap: 8rem;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.project-footer div{
+    height: 100%;
+}
+
+.project-footer a{
+    color: #ffd60a;
+    text-decoration: none;
+}
+
+.project-footer b{
+    font-size: 1.2rem;
+    padding: 1px;
+    border-bottom: 2px solid #ffd60a;
+}
+
+
+.project-navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.project-navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+    list-style: none;
+}
+
+.project-navbar a {
+    font-size: 2rem;
+    color: #ffd60a;
+}
+
+.project-navbar ul li {
+    padding: 0 1em;
+}
+
+.project-navbar li a {
+    text-decoration: none;
+}
+
+.project-navbar .hr {
+    width: 90%;
+    height: 5px;
+    background-color: #ffd60a;
+}
+
+.title h2 {
+    padding-left: 10px;
+    width: 120px;
+}
+
+
+.Won {
+    background-color: black;
+}
+
+.card-table  p{
+    font-size: 25px;
+}
+
+.card-table-top p{
+    margin: 0;
+}
+
+.project-bets {
+    background-color: #7B3F00;
+
+}
+
+
+.project-bets form{
+    margin: 0;
+}
+
+
+.project-bets {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7rem;
+    justify-content: center;
+}
+
+.bet-btn {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    background-color: #7B3F00;
+}
+
+.blackjack-form {
+    margin: 0;
+}
+
+
+
+.bet-btn button{
+    margin: 0;
+    left: 50%;
+    position: relative;
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+
+
+    background-color: #EE4B2B;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 2rem;
+    margin: 4px 2px;
+}
+
+
+.project-main {
+    color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+
+.project-main input{
+    margin-right: 0;
+    width: 40%;
+}
+
+
+.project-game {
+    color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-size: 2rem;
+    height: 800px;
+}
+
+
+.project-game input{
+    margin-right: 0;
+    width: 40%;
+}
+
+.rules {
+    color: #FFD60A;
+}
+
+.show-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.show-cards span {
+    font-size: 6rem;
+    background-color: white;
+}
+
+.project-api {
+    border-bottom: 5px solid #ffd60a;
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
+
+.project-api button{
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background-color: #FFD60A;
+}
+
+.about-div {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.about-div h1 {
+    padding-bottom: 20px;
+}
+
+
+

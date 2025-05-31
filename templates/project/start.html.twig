@@ -1,0 +1,37 @@
+{% extends "project/project.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+    <div class="project-game">
+
+        <h2>BlackJack</h2>
+
+        <p class="explain">Målet med spelet är att komma så nära 21 som möjligt med korten du drar, varje kort har ett värde och om du får över 21 så förlorar du!</p>
+
+        <p>
+            <a class="rules" href="{{ path('projectAbout') }}">
+                Learn rules
+            </a>
+        </p>
+
+        <form action="{{ path('projPlayers') }}" method="post">
+            <label for="title">Player Name:</label><br>
+
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="title">Hand amounts (max 3):</label><br>
+
+            <input type="number" id="players" name="players" min="1" max="3" required><br>
+
+            <input class="button" type="submit" value="Start">
+        </form> 
+
+
+
+    </div>
+    
+    
+{% endblock %}

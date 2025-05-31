@@ -72,16 +72,24 @@ class BlackJack
         if ($player == 'player') {
             $this->playerHand[] = $drawn[0];
 
-            $hand =  $this->playerHand;
+            $hand = $this->playerHand;
 
         } elseif ($player == 'dealer') {
-            while ($this->getScore($this->dealerHand) <= 17) {
+            print_r($this->getScore($this->dealerHand));
+            if (count($this->dealerHand) === 0) {
                 $drawn2 = $this->deck -> drawCard(1);
 
                 $this->dealerHand[] = $drawn2[0];
+            } else {
+                while ($this->getScore($this->dealerHand) <= 17) {
+                    $drawn2 = $this->deck -> drawCard(1);
+
+                    $this->dealerHand[] = $drawn2[0];
+                }
             }
 
-            $hand =  $this->dealerHand;
+
+            $hand = $this->dealerHand;
 
         }
 

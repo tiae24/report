@@ -21,13 +21,13 @@ class BlackJackHand
     {
         $actualscore = 0;
         foreach ($hand as $card) {
-            $score = $this->extractCardValue($card);
-            $score = $this->isRoyal($score);
+            $cardValue = $this->extractCardValue($card);
+            $score = $this->isRoyal($cardValue);
             if ($actualscore >= 8) {
-                if ($score == 'A') {
+                if ($cardValue == 'A') {
                     $score = 1;
                 }
-            } elseif ($score == 'A') {
+            } elseif ($cardValue == 'A') {
                 $score = 14;
             }
             $actualscore += (int) $score;
@@ -58,8 +58,9 @@ class BlackJackHand
      * Here we give values based on face cards.
      *
      * @param string $score
+     * @return int $score
      */
-    private function isRoyal(string $score)
+    private function isRoyal(string $score): int
     {
         if ($score == 'K') {
             $score = 13;
@@ -68,7 +69,7 @@ class BlackJackHand
         } elseif ($score == 'J') {
             $score = 11;
         }
-        return $score;
+        return (int) $score;
     }
 
 

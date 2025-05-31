@@ -1,0 +1,61 @@
+{% extends "project/project.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+    <div class="project-main"">
+
+    {% for routes in route %}
+    <div class="project-api">
+
+        <h3>{{ routes.route }}</h3>
+
+        <h2>{{ routes.name }}</h2>
+
+        <p>{{ routes.beskrivning }}</p>
+
+        {% if routes.name == 'betApi' %}
+
+        <form action="{{ path(routes.name) }}" method="{{routes.metod}}">
+
+            <label for="title">Players:</label><br>
+
+            <input type="number" id="players" name="players" required><br>
+
+            <label for="title">Bank account money:</label><br>
+
+            <input type="text" id="money" name="money" required><br>
+
+            <label for="title">Bet amount:</label><br>
+
+            <input type="text" id="bet" name="bet" required><br>
+
+            <button>Go!</button>
+        </form>
+
+        {% elseif routes.name == 'drawCardsApi' %}
+
+        <form action="{{ path(routes.name) }}" method="{{routes.metod}}">
+
+            <label for="title">Draws:</label><br>
+
+            <input type="number" id="draws" name="draws" required><br>
+
+            <button>Go!</button>
+        </form>
+
+        {% else %}
+
+        <form action="{{ path(routes.name) }}" method="{{routes.metod}}">
+            <button>Go!</button>
+        </form>
+
+        {% endif %}
+
+    </div>
+
+    {% endfor %}
+
+    </div>
+{% endblock %}

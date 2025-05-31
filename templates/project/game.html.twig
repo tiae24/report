@@ -1,0 +1,120 @@
+{% extends "project/project.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+    <div class="project">
+
+
+        <div class="card-table-top">
+        <p style="margin: 0;">Dealers Cards</p>
+        <p style="font-size: 40px;">{{dealerScore["dealer"][0]}}</p>
+            <div class="dealer-cards">
+                {% for i in 0..(dealerHand|length - 1) %}
+                {% if dealerHand %}
+                    <span class="card-symbol {{ dealerHand[i]['suit'] }}">{{ dealerHand[i]['graphic'] }}</span>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <p class="player-title">Players Cards</p>
+
+        <div class="card-table">
+        {% if playerHand %}
+        {% for handIndex, hand in playerHand.player %}
+            {% set player = 'No-Score' %}
+            {% if game[handIndex-1] == 'Player won' %}
+                {% set player = 'Player-won' %}
+            {% elseif game[handIndex-1] == 'Dealer won' %}
+                {% set player = 'Dealer-won' %}
+            {% endif %}
+            <div class="player-cards">
+            <p>Hand {{ handIndex }}</p>
+
+
+            <p>{{ attribute(playerScore["player"], handIndex-1) }}</p>
+
+            {% for card in hand %}
+                <span class="card-symbol {{ card.suit }}">{{ card.graphic }}</span>
+            {% endfor %}
+
+            <p class="winnings {{ player }}" >Bet Winnings:  {{ winners[handIndex-1] }}</p>
+
+            <p>Bet Amount:  {{ bets[handIndex-1] }}</p>
+
+            <p class="winnings {{ player }}">Winner:  {{ game[handIndex-1] }}</p>
+            </div>
+        {% endfor %}
+        {% endif %}
+
+        </div>
+
+        {% if betsPlaced == 'Placed' %}
+        <div class="play-btn">
+                
+                {% for i in 0..(players - 1) %}
+                    {% if game[i] == 'No Score' and stand["stand" ~ i] == 'Go' %}
+                    <div>
+                        <form method="POST">
+                            <button type="submit" name="action" value="draw{{ i + 1 }}">Dra kort {{ i + 1  }}</button>
+                            {% if playerScore["player"][i] == 0 %}
+                                <button type="submit" name="action" value="stand{{ i }}" disabled>Stanna {{ i + 1  }}</button>
+                            {% else %}
+                                <button type="submit" name="action" value="stand{{ i }}">Stanna {{ i + 1  }}</button>
+                            {% endif %}
+
+                        {% if dealerTurn == "Go" %}
+                            <button type="submit" name="action" value="stand">Dealers Turn</button>
+                        {% endif %}
+
+
+                        </form>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
+
+        </div>
+        {% endif %}
+
+
+    </div>
+    {% if betsPlaced == 'NotPlaced' %}
+        <form class="blackjack-form" action="{{ path('projBet') }}" method="POST">
+        <div class="project-bets">
+
+            {% for i in 0..(players - 1) %}
+            <div class="bet-inputs">
+
+                <label for="title">Bet Hand: {{i+1}}</label><br>
+
+                <input type="number" id="bet{{ i }}" name="bet{{ i }}" required><br>
+            
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="bet-btn">
+            <button type="submit" name="action" value="hand">Bet</button>
+        </div>
+
+        </form>
+    {% endif %}
+
+    {% if dealerTurn == "Start" %}
+    <form class="blackjack-form" action="{{ path('projStart') }}" method="POST">
+            <div class="bet-btn">
+                <button type="submit" name="action" value="hand">Restart Game</button>
+            </div>
+        </form>
+
+    {% endif %}
+
+    
+    
+{% endblock %}

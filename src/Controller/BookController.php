@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 final class BookController extends AbstractController
 {
@@ -90,14 +91,18 @@ final class BookController extends AbstractController
     #[Route('/book/create', name: 'book_create', methods: ['POST'])]
     public function createBook(
         ManagerRegistry $doctrine,
+        Request $request,
     ): Response {
+
+        $form = $request->request->all();
+
         $entityManager = $doctrine->getManager();
 
         $book = new Book();
-        $book->setTitle($_POST['title']);
-        $book->setWriter($_POST['writer']);
-        $book->setISBN($_POST['ISBN']);
-        $book->setImage($_POST['image']);
+        $book->setTitle($form['title'])
+            ->setWriter($form['writer'])
+            ->setISBN($form['ISBN'])
+            ->setImage($form['image']);
 
         // tell Doctrine you want to (eventually) save the Product
         // (no queries yet)
@@ -222,20 +227,24 @@ final class BookController extends AbstractController
     #[Route('/book/update/{id}', name: 'update_book', methods: ['POST'])]
     public function updateBook(
         ManagerRegistry $doctrine,
+        Request $request,
         int $id,
     ): Response {
         $entityManager = $doctrine->getManager();
         $book = $entityManager->getRepository(Book::class)->find($id);
+
+        $form = $request->request->all();
 
         if (!$book) {
             throw $this->createNotFoundException(
                 'No product found for id '.$id
             );
         }
-        $book->setTitle($_POST['title']);
-        $book->setWriter($_POST['writer']);
-        $book->setISBN($_POST['ISBN']);
-        $book->setImage($_POST['image']);
+
+        $book->setTitle($form['title'])
+            ->setWriter($form['writer'])
+            ->setISBN($form['ISBN'])
+            ->setImage($form['image']);
         $entityManager->flush();
 
         return $this->redirectToRoute('book_view_all');

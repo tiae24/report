@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body class="project-body">
+        <div class="project-navbar">
+            <div class="header">
+                <div class="logo">
+                </div>
+                <div class="title">
+                    <a href="">
+                        <h2>Site</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <nav class="project-navbar">
+                <ul>
+                    <li><a href="{{ path('projStart') }}">Game</a></li>
+                    <li><a href="{{ path('projectAbout') }}">About</a></li>
+                    <li><a href="{{ path('projectApi') }}">Api</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        {% block body %}{% endblock %}
+
+        <div class="project-footer">
+            <div>
+                <p>
+                    <b>
+                        Useful Links
+                    </b>
+                </p>
+
+                <p>
+                    <a href="{{ path('projectApi') }}">
+                        Api
+                    </a>
+                </p>
+
+                <p>
+                    <a href="{{ path('projectAbout') }}">
+                        About
+                    </a>
+                </p>
+
+                <p>
+                    <a href="{{ path('projStart') }}">
+                        Start Game
+                    </a>
+                </p>
+
+
+
+            </div>
+            <div class="github">
+                <p>
+                    <b>
+                        Github Links
+                    </b>
+                </p>
+
+                <p>
+                    <a href="https://github.com/dbwebb-se/mvc">
+                        Our course repo on github
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://github.com/tiae24/report">
+                        My Repositories for this course
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="https://dbwebb-se.github.io/mvc/">
+                        The Course lessons
+                    </a>
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>

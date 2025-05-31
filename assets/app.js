@@ -8,6 +8,7 @@
 import hello from './js/hello.js';
 
 import './styles/app.css';
+import './styles/project.css';
 
 console.log(hello())
 

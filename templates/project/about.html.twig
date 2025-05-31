@@ -1,0 +1,83 @@
+{% extends "project/project.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<div class="project-main">
+
+    <div class="about-div">
+        <h1>About Project</h1>
+        <h3>Timothy</h3>
+        <p>
+            Detta är sidan för mitt slut projekt på kursen MVC
+        </p>
+
+        <p>
+            Det jag valde att fokusera på för detta projekt var att göra en sida där man kan köra blackjack, eftersom jag redan gjort ett kortspel, så det kändes 
+            som den naturliga saken att evolvera det jag redan hade gjort.
+        </p>
+
+        <p>
+            Projektet består utav 3 laddningsidor, /proj/game som är där man kan starta BlackJack spelet, där får vi se ett "dealer bord" med dealerns hand och 
+            så många händer som spelaren har valt (1-3).
+        </p>
+
+        <p>
+            Vi har laddningsidan /proj/about som är denna sida, där vi har info om detta projektet, hur blackjack funkar och vad korten är värda.
+        </p>
+
+        <p>
+            Den tredje laddningsidan är Api som är en sorts "test" sida där man kan se olika saker och vad dem gör på sidan i form av JSON routes
+            , man kan se hur många kort blackjack 
+            klassen består av, hur en game av blackjack kan se ut, ett exemepl på hur det funkar när man bettar och hur bank klassen funkar, och mycket mer.
+        </p>
+    </div>
+
+    <div class="about-div">
+        <h1>
+            BlackJack
+        </h1>
+
+        <p>
+            BlackJack är ett väldigt simpelt spel, du och motståndaren drar kort och ska komma så nära 21 som möjligt, spelet går ut på att dealern drar 1 kort först 
+            och sedan är det din tur, man vill ju såklart komma så nära 21 som möjligt men man vill inte dra för lite, eller dra för mycket vilket betyder att man måste 
+            tänka om det är värt att dra ett kort till eller om det är mer värt att chansa att du har tillräckligt högt värde för att vinna mot dealerns hand.
+        </p>
+
+        <p>
+            Alla numrerade korten är värde deras nummer medans alla face kort är värde 10 och ess är värde antigen 1 eller 11 beroende på ifall man kommer få 
+            över 21 med 11 eller inte.
+        </p>
+
+        <h2>
+            KortVärden
+        </h2>
+
+        <div class="show-cards">
+            <div>
+                <span class="card-symbol hearts">🂻</span>
+                <h3>Value: 10</h3>
+            </div>
+            <div>
+                <span class="card-symbol hearts">🂽</span>
+                <h3>Value: 10</h3>
+            </div>
+
+            <div>
+                <span class="card-symbol hearts">🂾</span>
+                <h3>Value: 10</h3>
+            </div>
+
+            <div>
+                <span class="card-symbol hearts">🂱</span>
+                <h3>Value: 1 / 11</h3>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

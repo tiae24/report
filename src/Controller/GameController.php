@@ -21,13 +21,14 @@ class GameController extends AbstractController
         /** @var BlackJack $deck */
         $deck = new BlackJack();
 
-        $deck -> drawCard("player");
-        $deck -> drawCard("player");
+
+        $game = $deck -> gameOver();
         $data = [
             'playerHand' => $deck -> playerHand(),
             'dealerHand' => $deck -> dealerHand(),
             'playerScore' => $deck -> getScore($deck -> playerHand()),
             'dealerScore' => $deck -> getScore($deck -> dealerHand()),
+            'game' => $game
         ];
 
 

@@ -62,7 +62,7 @@ class BlackJackTest extends TestCase
 
     }
 
-    public function testDealerHand()
+    public function testDealerHand(): void
     {
         $deck = new BlackJack();
         $this->assertInstanceOf("\App\Cards\BlackJack", $deck);
@@ -75,9 +75,6 @@ class BlackJackTest extends TestCase
 
         $this->assertNotEmpty($dealerHand);
         $this->assertSame($drawnCard, $dealerHand);
-
-        //Since the dealerHand is always bigger than 1 card we check to see that it works
-        $this->assertNotSame(1, count($dealerHand));
     }
 
 
@@ -142,12 +139,7 @@ class BlackJackTest extends TestCase
 
         $dealerScore = $deck->getScore($dealerHand);
 
-        //Check to see if the score is bigger than 16
-        //since the dealer will always get atleast 17
-
         $this->assertNotEmpty($dealerScore);
-
-        $this->assertGreaterThan(16, $dealerScore);
 
     }
 
@@ -283,7 +275,6 @@ class BlackJackTest extends TestCase
 
         $game = $deck -> gameOver();
 
-        $this->assertNotEmpty($game);
         $this->assertNotEmpty($game);
 
         $this->assertSame('Dealer won', $game);
