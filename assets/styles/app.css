@@ -146,6 +146,10 @@ h1 {
     border-top: 2px solid #000;
 }
 
+button {
+    cursor: pointer;
+}
+
 .main button {
     background-color: #fdf8e1;
     color: #000;
@@ -153,6 +157,7 @@ h1 {
     padding: 18px 32px;
     border-radius: 12px;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .main button:hover {

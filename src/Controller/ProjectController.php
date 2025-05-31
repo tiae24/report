@@ -44,11 +44,6 @@ class ProjectController extends AbstractController
         $bank->placeBet(2, 100);
         $bank->placeBet(0, 100);
 
-
-        $try = $deck -> playerHand();
-
-        $players = 3;
-
         $deck -> playerAction("draw1");
         $deck -> playerAction("draw1");
         $deck -> playerAction("draw2");
@@ -139,8 +134,6 @@ class ProjectController extends AbstractController
             ]
             ];
 
-        $player = $deck -> playerHand();
-
         $data = [
             'playerHand' => $deck -> playerHand(),
             'dealerHand' => $deck -> dealerHand(),
@@ -165,8 +158,6 @@ class ProjectController extends AbstractController
 
         /** @var Bank $bank */
         $bank = $session->get("bank");
-
-        $dealerTurn = "";
 
 
         $action = $request->request->get('action');
@@ -244,7 +235,6 @@ class ProjectController extends AbstractController
 
     #[Route('/proj/bet', name: 'projBet', methods: ['POST'])]
     public function projBet(
-        Request $request,
         SessionInterface $session
     ): Response {
 

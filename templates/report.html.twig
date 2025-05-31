@@ -316,6 +316,169 @@ Tror inte jag hade jobbat med klasser i php förut så visste inte riktigt att m
                 </p>
 
 
+                <h2 id="kmom10" class="reports">kmom10</h2>
+
+
+                <p>
+                    När jag började tänka på vad jag ville att projektet skulle fokusera på så var det ganska lätt, jag hade ju redan gjort ett kortspel (21) vilket är väldigt likt blackjack så jag tänkte att jag bara fortsätter på det jag har.
+                </p>
+
+                <p>
+                    För det första så kopierade jag alla klasser jag använde för (21) och lade in dem i en ny mapp för projektet, där började jag göra om det för blackjack, jag tänkte att detta sättet gjorde att det gick mycket fortare eftersom jag inte behövde ändra någonting i Cards och CardsGraphic klasserna och för klassen DeckOfCards behövde jag bara göra så man kunde göra flera kortleckar.
+                </p>
+
+                <p>
+                    För att fixa det så gjorde jag bara så man kunde ge en input i DeckOfCards där man valde hur många kortlekar man ville ha och sen loopade man bara igenom där vi gjorde kortlekarna så många gånger.
+                </p>
+
+                <p>
+                    När jag sedan började göra så man kunde spela med flera händer så ändra jag så att playerHands var en array som tog emot händer, så man fick istället t.ex “player” 
+                </p>
+
+                <h3> 0->Hand 1 </h3>
+                <h3> 1->Hand 2 </h3>
+                <h3> 2->Hand 3 </h3>
+
+                <p>
+                    För att sedan implementera det så var det bara att lägga till så att man var tvungen att skicka i vilket hand nummer man drog ifrån för att sedan skicka in som förut men nu hade vi $playerHand[“player”][nummer][] där vi skicka in det dragna kortet.
+                </p>
+
+                <p>
+                    När jag sedan försökte implementera allting första gången så fick jag det och funka men det var ett litet problem, jag hade gjort det mesta i Controllern, så självaste routen blev fylld med ganska många if satser som checkade vilken knapp jag klickade på t.ex Första handens Draw, vilket skulle göra att jag drog ett kort till den handen, eller första handens stand vilket skulle göra att första handens knapp försvann.
+                </p>
+
+                <p>
+                    Så jag behövde ju såklart få in det där i klassen då gjorde jag en egen klass och en metod som vad action, jag hade en action i BlackJack klassen och en i den egna BlackJackAction klassen, i blackjack klassen så kollade jag ifall man klickade på draw eller stand, klickade man på draw så kollade man med en metod vilken spelares knapp som hade klickats på, om det var draw1 så betydde det att jag klickade på första handens draw knapp, vilket ska leda till att dra ett kort för första spelarens hand.
+                </p>
+
+                <p>
+                    Om jag klickade på stand så kallade man på klassen BlackJackAction och dess metod, där inne gjordes allt som fixade så att man sedan tog bort hand knappen för denna hand man klickade stand på.
+                </p>
+
+                <p>
+                    I BlackJack så hade vi en array som hette $stand, där vi hade strings som kollade ifall en knapp hade blivit klickad på eller inte, värden var “Go” vilket betydde att handens knapp inte hade blivit klickad på, men när man klickade på stand så skickades den i metoden som jag nämndes innan och ändra “Go” till “Stop” och så fick man tillbaka den nya array som ändra $stand, så nu hade en knapp stängts av.
+                </p>
+
+                <p>
+                    Jag hade sedan en metod dealersTurn som checkade ifall alla stand knappar hade blivit klickade på, isåfall var det dealerns tur att börja dra kort tills den fick över 17.
+                </p>
+
+                <p>
+                    Jag hade även fixat så att dealern drog ett kort i början av spelet med en if som checkade ifall $score = 0 så drog man bara en gång, annars var det en while loop som drog till man fick över 17.
+                </p>
+
+                <p>
+                    Bank klassen jag gjorde var ändå väldigt simpel och lätt att göra, jag gjorde 2 arrays som var bets och winners, och sedan en int som var balans, winners var ju såklart pengar man vann, och bets var betsen man hade lagt. 
+                </p>
+
+                <p>
+                    När man kallade på klassen så skulle man ge hur många spelare som skulle köra och vilken balans man hade.
+                </p>
+
+                <p>
+                    Jag loopade sedan igen winners och bets och skapade en nyckel och gav dem ett värde på noll, så ifall jag hade valt 5 players fick jag 5 ställen att lägga bets.
+                </p>
+
+                <p>
+                    Sedan hade jag en placeBet metod där man gav en index och placerad bet för den indexen samt hur mycket man ville beta.
+                </p>
+
+                <p>
+                    Jag hade sedan en metod som kollade för varje bet index vilken hand som vann, så ifall hand1 vann så fick bet1 tillbaka pengar, eller om man förlorade så fick man inte tillbaka några pengar.
+                </p>
+
+                <p>
+                    När jag skapade självaste hur sidan såg ut så gjorde jag en ny css fil som var projekt och importa den med app.js.
+                </p>
+
+                <p>
+                    Alla klasser som användes döpte jag till någonting projekt eller något som var exklusivt till projektdelen.
+                </p>
+
+                <p>
+                    Eftersom mina sidor för dem andra kursmomenten var gula och ljusa så ändrade jag till en mörkare sida med allting i mitten,  istället för att ha saker i mitten och sedan ha dem text-align left så körde jag allting med text-align center och justify content center. Färgerna var också mörk som huvud färg med gul och vit för att skriva texterna.
+                </p>
+
+                <p>
+                    I mitt 21 spel så hade jag inget direkt bort där korten låg, så nu bestämde jag mig för att göra ett klassiskt dealer bort med grön bakgrund och bruna borders som täckte hela widthen, där inne hade jag så många händer som man hade valt när man starta igång spelet, först fick man betta på händerna och när man sedan hade gjort det så kunde man börja spela, alla händer hade 2 knappar, (draw) och (stand), när alla händer var färdigspelade så drog dealern klart på sin hand och så såg man vilken hand som vann eller förlorade och hur mycket man vann eller förlorade.
+                </p>
+
+                <p>
+                    Jag fixade även kodtäckning över 90% på alla mina klasser men jag var lite osäker på om jag skulle fixa för controllerna eftersom när jag kör dem lokalt så funkar testerna men när jag sedan laddar upp på github och dem körs på scrutinizer så får jag errors så jag har testerna för dem skrivna i txt filer eftersom när jag lämnar in vill jag att scrutinizer ska funka.
+                </p>
+
+                <p>
+                    För api så valde jag att välja 2 posts, en där man kunde lägga in bets på bank klassen och se hur det såg ut, formen där man posta hade 3 fält att fylla i bankens total pengar, hur många och vad man vill betta på alla, jag valde att bara köra samma bets på alla eftersom jag ville inte ha för många fält att fylla i.
+                </p>
+
+                <p>
+                    Den andra api som postade hade jag där man drog kort, man valde hur många man ville dra och så drogs det antingen till man fick 21 eller förlorade eftersom man inte ska kunna dra kort när man har förlorat.
+                </p>
+
+
+                <p>
+                    Resten var ställen där man kunde se hur en avklarad match såg ut, man såg saker som hur 3 händer kunde se ut, hur det såg ut för Dealern och hur man såg vilka händer som hade vunnit.
+                </p>
+
+
+                <p>
+                    Jag hade ju redan gjort en api del med massa routes innan så jag visste redan hur jag skulle skriva allt och hade en bas, så jag återanvände mig av lite där för att t.ex skriva ut mina routes på twig, och så var min blackjack klass hyfsat lik men nu så använde jag mig av dem nya metoderna och fyllde med parametrarna som behövdes.
+                </p>
+
+
+                <p>
+                    Så istället för bara en drawcard så gjorde jag det med action(“draw1”), action(“draw2”) osv för att dra för flera händer.
+                </p>
+
+                <h3> Hur det gick </h3>
+
+
+                <p>
+                    Projektet gick helt okej att genomföra, det tog lite längre tid att göra än vad jag trodde det skulle ta, det tog cirka 5-6 dagar att bli klar med allting.
+                </p>
+
+
+                <p>
+                    Det svåraste var att göra om min gamla blackjack(21) klass som jag använde för spelet 21 och få den nu att funka med flera händer, flera knappar som man kan klicka på och få spelet att sluta när alla händer har antingen förlorat / fått 21 eller att man har klickat på stand knappen.
+                </p>
+
+
+                <p>
+                    Jag gjorde ju även mycket av if satserna i controllern först så behövde sedan fixa så det var metoder i Blackjack och inbyggda som tog lite mer tid än vad jag trodde det skulle göra.
+                </p>
+
+                <p>
+                    Banken var däremot väldigt lätt att göra eftersom det var en så simpel klass och jag gjorde den sist så hade redan hunnit tänka ganska mycket på hur jag ville att den skulle se ut och hur den skulle funka.
+                </p>
+
+                <p>
+                    Projektet var som sagt inte så svårt bara lite mer tidskrävande än vad jag först trodde, var även lite jobbigt att jag var tvungen att fixa sidan så den såg annorlunda ut men det gick ändå ganska fort, jag tycker det var ett bra och rimligt projekt för kursen eftersom det jag valde (kortspelet) var ju egentligen det jag redan hade gjort under kursen och byggde bara på det som redan fanns, jag tycker också det är ganska skönt när man jobbar i samma ställe som man alltid har så man inte behöver startas om från början utan kan direkt komma igång med kodningen.
+                </p>
+
+                <h3> Hela kursen </h3>
+
+                <p>
+                    Jag tycker kursen var ganska rolig, kursen hade en bas som vad hyfsat lik de andra kurserna t.ex i hur man jobbar med routes och dem funkar, samt så hade jag redan jobbat med twig innan, jag hade gjort klasser och jobbat med det i oopython och dem flesta uppgifterna var väldigt roliga att göra och inte allt för svåra.
+                </p>
+
+                <p>
+                    Allt material var väldigt hjälpande och man kunde alltid hitta något som kunde hjälpa en för ett kursmoment vare sig det var en övning, genomgångar osv.
+                </p>
+
+                <p>
+                    Däremot gillade jag inte kmom06 där man skulle skriva väldigt mycket, det var förmodligen uppgiften som tog mig längst tid att bli klar med inte för att det var supersvårt men tyckte bara uppgiften var lite tråkig och det var jobbigt att jobba med scrutinizer för saker som controllers testerna eftersom dem funkade inte i scrutinizer så var lite osäker på hur jag skulle göra det.
+                </p>
+
+                <p>
+                    Jag är lite missnöjd över mig själv i kursen, tycker jag har gjort uppgiften ganska bra men hamnade lite efter i kursen i början så mina inlämningar var nästan alltid lite sena vilket inte direkt skadade kvaliteten på mina uppgifterna men kändes bara lite jobbigare det har inte hänt någon annan gång i några kursen så kanske bara var att jag blev lite lat nu när sommaren är nära. Men annars är jag nöjd med det jag gjorde i kursen och hur kursen var uppsatt.
+                </p>
+
+                <p>
+                    Jag hade gett kursen 8/10, roliga uppgifter, bra hjälp material, lätt att förstå och komma igång med symfony och få allting att fungera som det skulle.
+                </p>
+
+
+
             </article>
         </main>
     </div>

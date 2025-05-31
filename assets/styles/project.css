@@ -318,3 +318,21 @@
 
 
 
+.project-hub {
+    height: 800px;
+}
+
+.project-hub button {
+}
+
+.main-button {
+    position: relative;
+    top: 40%;
+}
+
+.main-button button {
+    background-color: #000814;
+    color: #FFD60A;
+    border: 1px solid #FFD60A;
+}
+
